@@ -7956,6 +7956,11 @@ react-app-polyfill@^1.0.1:
     regenerator-runtime "0.13.2"
     whatwg-fetch "3.0.0"
 
+react-awesome-button@^6.1.2:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/react-awesome-button/-/react-awesome-button-6.1.2.tgz#72402cf5e4180fa90c88fe7c1dd8970e771e412f"
+  integrity sha512-pPpuH3c1RTGoZkcLzfhQ/1PVxc56XS69mDkI8qRtRY7/cD7z+YKYFEzUk0IAg5m8l/Uwro97TqCDLvJJUMl1MQ==
+
 react-dev-utils@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-9.0.1.tgz#5c03d85a0b2537d0c46af7165c24a7dfb274bef2"
