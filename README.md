@@ -2,11 +2,8 @@
 
 ## Getting Started
 
-```
-git clone https://github.com/dannyvassallo/react-boilerplate
-cd react-boilerplate
-npm install
-npm run dev
-```
+cd
+yarn install
+yarn run dev
 
 Visit `localhost:3000`
