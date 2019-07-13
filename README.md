@@ -1,4 +1,4 @@
-# react-boilerplate
+# Untitled: Team 1 project 3
 
 ## Getting Started
 
