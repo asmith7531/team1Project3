@@ -18,7 +18,6 @@ import {
 import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
 import { BrowserRouter as Switch, Link } from "react-router-dom";
-import Test from "../../components/Test"
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -59,12 +58,14 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? "0.5em" : "1.5em"
       }}
     />
-      <Link to={"/login"}>
+    <Switch>
+      <Link to="/login">
         <AwesomeButton primary>
           Get Started
           <Icon name="right arrow" />
         </AwesomeButton>
       </Link>
+    </Switch>
   </Container>
 );
 
@@ -87,7 +88,6 @@ class DesktopContainer extends Component {
     const { fixed } = this.state;
 
     return (
-      <>
       <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
         <Visibility
           once={false}
@@ -139,9 +139,6 @@ class DesktopContainer extends Component {
 
         {children}
       </Responsive>
-
-      <Test />
-      </>
     );
   }
 }
@@ -310,7 +307,7 @@ const HomepageLayout = () => (
           horizontal
           style={{ margin: "3em 0em", textTransform: "uppercase" }}
         >
-          <a href="/">Testimonials</a>
+          <a href="#">Testimonials</a>
         </Divider>
         <Header as="h3" style={{ fontSize: "2em" }}>
           "I Love My Job!"
