@@ -13,7 +13,7 @@ import {
 
 const Home = () => (<>
   <Navbar bg="light" expand="lg">
-    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+    <Navbar.Brand href="#home">Project Three</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
@@ -33,13 +33,6 @@ const Home = () => (<>
       </Form>
     </Navbar.Collapse>
   </Navbar>
-  <Container>
-    <Row>
-      <Col>
-        <p>Hello World</p>
-      </Col>
-    </Row>
-  </Container>
 </>)
 
 export default Home

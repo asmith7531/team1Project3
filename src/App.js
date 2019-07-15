@@ -1,8 +1,17 @@
-import React from 'react'
-import Home from './screens/Home'
+import React from 'react';
+import { hot } from 'react-hot-loader/root';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from './screens/Home';
+
 
 const App = () => (
-  <Home />
+    <>
+        <Router>
+            <Switch>
+                <Route exact path="/" component={Home} />
+            </Switch>
+        </Router>
+    </>
 )
 
-export default App
+export default hot(App);
