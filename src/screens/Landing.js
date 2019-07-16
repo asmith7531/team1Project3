@@ -4,7 +4,7 @@ export default class Landing extends Component {
   render() {
     return (
       <div>
-        <Parallax image={<img />} />
+        {/* <Parallax image={<img />} />
         <div className="section white">
           <div className="row container">
             <h2 className="header">Parallax</h2>
@@ -15,7 +15,7 @@ export default class Landing extends Component {
             </p>
           </div>
         </div>
-        <Parallax image={<img />} />
+        <Parallax image={<img />} /> */}
       </div>
     );
   }
