@@ -1,7 +1,10 @@
 {
+<<<<<<< HEAD
   "name": "react-boiler",
+=======
+  "name": "project_three",
+>>>>>>> origin
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
@@ -9,15 +12,25 @@
     "build": "./node_modules/.bin/webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
   "keywords": [],
   "author": "",
   "license": "ISC",
+=======
+  "repository": "https://github.com/asmith7531/team1project3.git",
+  "author": "michaelikang <michaelikang94@gmail.com>",
+  "license": "MIT",
+>>>>>>> origin
   "dependencies": {
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "materialize-css": "^1.0.0-rc.2",
     "popper.js": "^1.15.0",
     "react": "^16.8.6",
+<<<<<<< HEAD
+=======
+    "react-bootstrap": "^1.0.0-beta.9",
+>>>>>>> origin
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1"
   },
@@ -36,7 +49,11 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.3",
+<<<<<<< HEAD
     "webpack-cli": "^3.3.5",
+=======
+    "webpack-cli": "^3.3.6",
+>>>>>>> origin
     "webpack-dev-server": "^3.7.2"
   }
 }
