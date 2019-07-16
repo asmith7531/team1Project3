@@ -2,11 +2,10 @@
 
 ## Getting Started
 
-cd
-yarn install
-yarn run dev
+yarn
+yarn dev
 
-Visit `localhost:3000`
+Visit `localhost:8080`
 
 ## Overview
 
