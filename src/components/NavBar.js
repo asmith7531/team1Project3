@@ -5,7 +5,7 @@ const Home = () => (
     <nav>
       <div className="nav-wrapper">
         <a href="#!" className="brand-logo center">
-          <h4>ZigZag</h4><p>find your way.</p>
+          <h4>ZigZag</h4>
         </a>
         <ul className="left hide-on-med-and-down">
           <li className="active">
