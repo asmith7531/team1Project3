@@ -1,11 +1,12 @@
 import React from "react";
 import { hot } from "react-hot-loader/root";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./styles/css/materialize.css";
+import "./styles/scss/materialize.scss";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
 import SignUp from "./screens/SignUp";
-import "./styles/css/materialize.css";
-import "./styles/scss/materialize.scss";
+import SchoolSearch from "./screens/SchoolSearch";
 
 const App = () => (
   <>
@@ -14,6 +15,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />
+        <Route path="/schoolsearch" component={SchoolSearch} />
       </Switch>
     </Router>
   </>
