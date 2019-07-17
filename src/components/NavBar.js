@@ -5,13 +5,12 @@ const Home = () => (
     <nav>
       <div className="nav-wrapper">
         <a href="#!" className="brand-logo center">
-          WayFarer
+          <h4>ZigZag</h4><p>find your way.</p>
         </a>
         <ul className="left hide-on-med-and-down">
           <li className="active">
-            <a name="dash" href="sass.html">
-              Dashboard
-            </a>
+            <Link to="/">Dashboard</Link>
+            
           </li>
           <li className="">
             <a name="careers" href="sass.html">
@@ -24,13 +23,13 @@ const Home = () => (
             </a>
           </li>
           <li className="">
-            <a name="colleges" href="badges.html">
-              Explore Colleges
-            </a>
+            <Link to="/schoolsearch">
+                Explore Colleges
+            </Link>
           </li>
         </ul>
         <ul className="right hide-on-med-and-down">
-          <Link to="/login" className=" blue material-icons">
+          <Link to="/login" className="  material-icons">
             account_circle
           </Link>
         </ul>
