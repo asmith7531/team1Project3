@@ -1,30 +1,14 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
-import M from "materialize-css";
 export default class SignUp extends Component {
-  componentDidMount() {
-    M.AutoInit();
-  }
   render() {
     return (
-      <>
-        <nav>
-          <div class="nav-wrapper">
-            <Link to="/" class="brand-logo center">
-              ZigZag
-            </Link>
-          </div>
-        </nav>
-        <div class="parallax-container">
-          <div class="parallax">
-            <img src="https://images.unsplash.com/photo-1563299967-4e70dbae7eb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-          </div>
-        </div>
+      <div>
         <div className="container ">
           <div className="row valign-wrapper">
-            <form className="col s8 offset-s2 center card-panel">
+            <form className="col s12">
               <h3>Sign Up</h3>
+
               <div className="row">
                 <div className="input-field col s6">
                   <input
@@ -56,12 +40,12 @@ export default class SignUp extends Component {
                   <label for="email">Email</label>
                 </div>
               </div>
-              <div className="row">
+              <div className="row ">
                 <div className="input-field offset-s3 col s6">
                   <input
                     id="password"
                     type="password"
-                    className="validate"
+                    className="validate   "
                     data-length="15"
                   />
                   <label for="password">Password</label>
@@ -81,7 +65,7 @@ export default class SignUp extends Component {
             </form>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

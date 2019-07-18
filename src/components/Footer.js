@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <div>
-      <footer className="page-footer">
+      <footer className="page-footer teal">
         <div className="container">
           <div className="row">
             <div className="col l6 s12">
