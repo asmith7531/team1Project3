@@ -2,15 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Home = () => (
   <>
-    <nav>
+    <nav className="teal">
       <div className="nav-wrapper">
-        <a href="#!" className="brand-logo center">
+        <a href="" className="brand-logo center">
           <h4>ZigZag</h4>
         </a>
         <ul className="left hide-on-med-and-down">
           <li className="active">
             <Link to="/">Dashboard</Link>
-            
           </li>
           <li className="">
             <a name="careers" href="sass.html">
@@ -23,9 +22,7 @@ const Home = () => (
             </a>
           </li>
           <li className="">
-            <Link to="/schoolsearch">
-                Explore Colleges
-            </Link>
+            <Link to="/schoolsearch">Find Schools</Link>
           </li>
         </ul>
         <ul className="right hide-on-med-and-down">

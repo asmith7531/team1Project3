@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import Footer from "../components/Footer";
 export default class Login extends Component {
   componentDidMount() {
     var elem = document.querySelector(".parallax");
@@ -9,11 +9,11 @@ export default class Login extends Component {
   render() {
     return (
       <>
-        
-          <div className="row center">
+        <div className="parallax-container">
+          <div className="row center section teal white-text">
             <h1 className="">ZigZag</h1>
           </div>
-          <div className="container">
+          <div className="container section">
             <div className="row s6 valign-wrapper offset-s3">
               <form className="col center s6 offset-s3 card-panel ">
                 <h3>Sign In</h3>
@@ -33,7 +33,11 @@ export default class Login extends Component {
               </form>
             </div>
           </div>
-    
+          <div className="parallax">
+            <img src="https://images.unsplash.com/photo-1502990313206-7f37a9514bea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+          </div>
+        </div>
+        <Footer />
       </>
     );
   }
