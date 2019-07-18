@@ -1,18 +1,24 @@
-import React from 'react';
-import { hot } from 'react-hot-loader/root';
+import React from "react";
+import { hot } from "react-hot-loader/root";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from './screens/Home';
-import "./styles/css/materialize.css"
-import "./styles/scss/materialize.scss"
+import "./styles/css/materialize.css";
+import "./styles/scss/materialize.scss";
+import Home from "./screens/Home";
+import Login from "./screens/Login";
+import SignUp from "./screens/SignUp";
+import SchoolSearch from "./screens/SchoolSearch";
 
 const App = () => (
-    <>
-        <Router>
-            <Switch>
-                <Route exact path="/" component={Home} />
-            </Switch>
-        </Router>
-    </>
-)
+  <>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/schoolsearch" component={SchoolSearch} />
+      </Switch>
+    </Router>
+  </>
+);
 
 export default hot(App);
