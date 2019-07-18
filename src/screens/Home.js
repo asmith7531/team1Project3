@@ -10,13 +10,13 @@ export default class Home extends Component {
     var elem = document.querySelector(".carousel");
     var instance = M.Carousel.init(elem, { duration: 200 });
   }
- 
+
   render() {
     return (
       <div>
         <NavBar />
         <Carousel />
-        <CardLeft/>
+        <CardLeft />
         <Footer />
       </div>
     );
