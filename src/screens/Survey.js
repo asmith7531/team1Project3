@@ -39,13 +39,13 @@ export default class Survey extends Component {
             <h5>This is Question 2</h5>
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group2" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group2" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -56,14 +56,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group3" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group3" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -75,14 +75,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group4" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group4" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -94,14 +94,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group5" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group5" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -113,14 +113,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group6" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group6" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -132,14 +132,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group7" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group7" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -151,14 +151,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group8" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group8" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -170,14 +170,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group9" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group9" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -189,14 +189,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group10" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group10" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -208,14 +208,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group11" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group11" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -227,14 +227,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group12" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group12" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -246,14 +246,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group13" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group13" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -265,14 +265,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group14" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group14" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -284,14 +284,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group15" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group15" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -303,14 +303,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group16" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group16" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -322,14 +322,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group17" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group17" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -341,14 +341,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group18" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group18" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -360,14 +360,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group19" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group19" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -379,14 +379,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group20" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group20" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -398,14 +398,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group21" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group21" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -417,14 +417,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group22" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group22" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -436,14 +436,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group23" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group23" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -455,14 +455,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group24" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group24" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -474,14 +474,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group25" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group25" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -493,14 +493,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group26" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group26" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -512,14 +512,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group27" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group27" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -531,14 +531,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group28" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group28" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -550,14 +550,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group29" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group29" type="radio"/>
               <span>No</span>
             </label>
             </div>
@@ -569,14 +569,14 @@ export default class Survey extends Component {
 
             <div className="col s-6">
             <label>
-              <input name="group1" type="radio"/>
+              <input name="group30" type="radio"/>
               <span>Yes</span>
             </label>
             </div>
           
             <div className="col s-6">
             <label>
-              <input class="with-gap" name="group1" type="radio"/>
+              <input class="with-gap" name="group30" type="radio"/>
               <span>No</span>
             </label>
             </div>
