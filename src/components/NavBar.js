@@ -12,21 +12,17 @@ const Home = () => (
             <Link to="/">Dashboard</Link>
           </li>
           <li className="">
-            <a name="careers" href="sass.html">
-              Discover Careers
-            </a>
+            <Link to="/careersearch">Discover Careers</Link>
           </li>
           <li className="">
-            <a name="personality" href="sass.html">
-              Find Your Passion
-            </a>
+            <Link to="/survey">Find Your Passion</Link>
           </li>
           <li className="">
             <Link to="/schoolsearch">Find Schools</Link>
           </li>
         </ul>
         <ul className="right hide-on-med-and-down">
-          <Link to="/login" className="  material-icons">
+          <Link to="/login" className="material-icons">
             account_circle
           </Link>
         </ul>
@@ -34,5 +30,6 @@ const Home = () => (
     </nav>
   </>
 );
+
 
 export default Home;
