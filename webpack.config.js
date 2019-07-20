@@ -34,7 +34,6 @@ module.exports = {
 
       contentBase: '/dist',
       //match the output path
-
       publicPath: '/'
       //match the output publicPath
     },

@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+
+
 export default class Login extends Component {
+
   componentDidMount() {
     var elem = document.querySelector(".parallax");
     var instance = M.Parallax.init(elem);
   }
+
   render() {
     return (
       <>
