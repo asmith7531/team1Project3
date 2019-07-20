@@ -1,17 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-
+import API from "../Utility/API";
 import M from "materialize-css";
 
 
 function SignUp(props) {
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Submitting Name ${username}`)
-}
+    if (username && password && password === confirm) {
+      API.newUser({
+        username,
+        password
+      });
+      let newUser = {
+        username,
+        password
+      };
+      alert(newUser);
+      alert(`Username: ${username}`);
+      alert(`Password:  ${password}`);
+      alert('New user created');
+    } else if (username && password && password !== confirm) {
+      alert('Your passwords do not match.')
+    } else {
+      alert("Please input required fields");
+    }
+  }
 
   useEffect(() => {
     M.AutoInit();
@@ -34,9 +52,9 @@ function SignUp(props) {
       <div className="container ">
         <div className="row valign-wrapper">
           <form onSubmit={handleSubmit} className="col s8 offset-s2 center card-panel">
-            <h3>Sign Up</h3>
+            <h3>Register</h3>
             <div className="row">
-              <div className="input-field col s6">
+              <div className="input-field col s12">
                 <input
                   id="first_name"
                   type="text"
@@ -45,10 +63,10 @@ function SignUp(props) {
                   value={username}
                   onChange={e => setUsername(e.target.value)}
                 />
-                <label for="first_name">First Name</label>
+                <label for="first_name">Username</label>
                 <p>{username}</p>
               </div>
-              <div className="input-field col s6">
+              {/* <div className="input-field col s6">
                 <input
                   id="last_name"
                   type="text"
@@ -56,7 +74,7 @@ function SignUp(props) {
                   data-length="20"
                 />
                 <label for="last_name">Last Name</label>
-              </div>
+              </div> */}
             </div>
             <div className="row">
               <div className="input-field col s12">
@@ -76,8 +94,11 @@ function SignUp(props) {
                   type="password"
                   className="validate"
                   data-length="15"
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
                 />
                 <label for="password">Password</label>
+                <p>{password}</p>
               </div>
             </div>
             <div className="row ">
@@ -87,11 +108,14 @@ function SignUp(props) {
                   type="password"
                   className="validate"
                   data-length="15"
+                  value={confirm}
+                  onChange={e => setConfirm(e.target.value)}
                 />
                 <label for="confirmPassword">Confirm Password</label>
+                <p>{confirm}</p>
               </div>
             </div>
-            <input className="input-field waves-effect waves-light btn" type="submit" value="Submit" />
+            <input href="/create/user" className="input-field waves-effect waves-light btn" type="submit" value="Submit" />
           </form>
         </div>
       </div>
