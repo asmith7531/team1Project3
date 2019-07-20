@@ -7,6 +7,8 @@ import Home from "./screens/Home";
 import Login from "./screens/Login";
 import SignUp from "./screens/SignUp";
 import SchoolSearch from "./screens/SchoolSearch";
+import CareerSearch from "./screens/CareerSearch";
+import Survey from "./screens/Survey";
 
 const App = () => (
   <>
@@ -16,6 +18,8 @@ const App = () => (
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />
         <Route path="/schoolsearch" component={SchoolSearch} />
+        <Route path="/careersearch" component={CareerSearch} />
+        <Route path="/survey" component={Survey}/>
       </Switch>
     </Router>
   </>
