@@ -1,24 +1,27 @@
 const express = require('express');
 const path = require('path'); // NEW
 const app = express();
-const port = process.env.PORT || 3005;
+const port = process.env.PORT || 3000;
 const db = require("../models");
 
-const session = require("express-session");
-// const passport = require("./config/passport");
-
-
+var session = require("express-session");
+var passport = require("../config/passport");
 var syncOptions = { force: true };
 
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const DIST_DIR = path.join(__dirname, '../dist'); 
+const HTML_FILE = path.join(DIST_DIR, '/index.html'); 
+app.use(express.static(DIST_DIR));
+app.use(
+    session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
 
-const DIST_DIR = path.join(__dirname, '../dist'); // NEW
-const HTML_FILE = path.join(DIST_DIR, '/index.html'); // NEW
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.use(express.static(DIST_DIR)); // NEW
 
 require('../routes/index')(app)
 
@@ -30,7 +33,7 @@ app.get('/', (req, res) => {
 
 db.sequelize.sync().then(() => {
     app.listen(port, () => {
-      console.log(` ==> 🌎  Listening on port ${port}. Visit http://localhost: ${port} / in your browser.`
-      );
+        console.log(` ==> 🌎  Listening on port ${port}. Visit http://localhost: ${port} / in your browser.`
+        );
     });
-  });
+});
