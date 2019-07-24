@@ -1,32 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import API from "../Utility/API";
+// import API from "../Utility/API";
 import Footer from "../components/Footer";
 
 
-function Login(props) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (username && password) {
-      API.login({
-        username,
-        password
-      });
-      let newUser = {
-        username,
-        password
-      };
-      alert(newUser);
-      console.log({ username });
-    } else {
-      alert("Please input required fields");
-    }
-  }
-
-
+const Login = ({
+  handleSubmit,
+  userChange,
+  pwChange,
+  username,
+  password
+}) => {
+  
   useEffect(() => {
     var elem = document.querySelector(".parallax");
     var instance = M.Parallax.init(elem);
@@ -46,7 +31,7 @@ function Login(props) {
                 <div className="input-field col s12">
                   <input
                     value={username}
-                    onChange={e => setUsername(e.target.value)}
+                    onChange={userChange}
                     id="userName"
                     type="text"
                     className="validate" />
@@ -56,7 +41,7 @@ function Login(props) {
                 <div className="input-field col s12">
                   <input
                     value={password}
-                    onChange={e => setPassword(e.target.value)}
+                    onChange={pwChange}
                     id="password"
                     type="password"
                     className="validate" />

@@ -16,14 +16,6 @@ function SignUp(props) {
         username,
         password
       });
-      // let newUser = {
-      //   username,
-      //   password
-      // };
-      // alert(newUser);
-      // alert(`Username: ${username}`);
-      // alert(`Password:  ${password}`);
-      // alert('New user created');
     } else if (username && password && password !== confirm) {
       alert('Your passwords do not match.')
     } else {
