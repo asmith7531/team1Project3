@@ -16,20 +16,23 @@ import API from "./Utility/API";
 function App(props) {
 
   const [loggedIn, setLoggedIn] = useState(false);
+  const [name, setName] = useState("");
+  // const [isCreated, setIsCreated] = useState(false);
 
   return (
     <>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/login" component={({history}) => <Login
+          <Route path="/login" component={({ history }) => <Login
             setLoggedIn={setLoggedIn}
+            setName={setName}
             history={history}
-            />}
-            />
+          />}
+          />
           <Route path="/signup" component={SignUp} />
           <Route path="/schoolsearch" component={SchoolSearch} />
-          <ProtectedRoute path="/profile" loggedIn={loggedIn} component={Profile} />
+          <ProtectedRoute path="/profile" loggedIn={loggedIn} name={name} component={Profile} />
         </Switch>
       </Router>
     </>

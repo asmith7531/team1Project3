@@ -1,7 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Profile extends Component {
-  render() {
-    return <h1>protected user profile page</h1>;
-  }
+const Profile = ({props, name}) => {
+    console.log(props);
+    return (
+        <>
+            <h1>Welcome {name}</h1>
+        </>
+    )
 }
+
+
+export default Profile;

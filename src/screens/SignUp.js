@@ -4,7 +4,7 @@ import API from "../Utility/API";
 import M from "materialize-css";
 
 
-function SignUp(props) {
+function SignUp({ setIsCreated }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
@@ -15,7 +15,8 @@ function SignUp(props) {
       API.newUser({
         username,
         password
-      });
+      }
+      );
     } else if (username && password && password !== confirm) {
       alert('Your passwords do not match.')
     } else {

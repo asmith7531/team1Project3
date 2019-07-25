@@ -4,7 +4,7 @@ import API from "../Utility/API";
 import Footer from "../components/Footer";
 
 
-const Login = ({ setLoggedIn, history }) => {
+const Login = ({ setLoggedIn, setName, history }) => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,6 +21,7 @@ const Login = ({ setLoggedIn, history }) => {
         password
       },
       setLoggedIn,
+      setName,
       history.push
       );
     } else {
