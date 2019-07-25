@@ -1,11 +1,12 @@
-# Untitled: Team 1 project 3
+# ZigZag: Team 1 project 3
 
 ## Getting Started
 
-yarn
-yarn dev
-
-Visit `localhost:8080`
+In your CLI, navigate to the app folder. And then:
+1. Yarn
+2. Yarn build
+3. Yarn start
+4. Visit `localhost:8080`in your browser
 
 ## Overview
 

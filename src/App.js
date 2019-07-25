@@ -7,11 +7,12 @@ import Home from "./screens/Home";
 import Login from "./screens/Login";
 import SignUp from "./screens/SignUp";
 import SchoolSearch from "./screens/SchoolSearch";
-import ProtectedRoute from "./components/Protected"
+import CareerSearch from "./screens/CareerSearch";
+import Survey from "./screens/Survey";
 import Profile from "./screens/Profile";
+
+import ProtectedRoute from "./components/Protected"
 import API from "./Utility/API";
-
-
 
 function App(props) {
 
@@ -32,12 +33,13 @@ function App(props) {
           />
           <Route path="/signup" component={SignUp} />
           <Route path="/schoolsearch" component={SchoolSearch} />
+          <Route path="/careersearch" component={CareerSearch} />
+          <Route path="/survey" component={Survey}/>
           <ProtectedRoute path="/profile" loggedIn={loggedIn} name={name} component={Profile} />
         </Switch>
       </Router>
     </>
   )
-}
-;
+};
 
 export default hot(App);
