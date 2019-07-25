@@ -10,11 +10,10 @@ export default {
         console.log("message", userData);
         axios.post('/create/user', userData)
         .then(function(response) {
-            <Redirect to="/login" />
-        })
-        // .then(function(response) {
-        //     setIsCreated(true);
-        // });
+            alert(`Hello ${response.data.username}. Click Login`);
+            console.log(response);
+
+        });
     },
     login: function (userData, setLoggedIn, setName, push) {
         console.log("message", userData);

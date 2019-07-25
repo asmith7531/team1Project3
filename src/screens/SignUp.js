@@ -4,7 +4,7 @@ import API from "../Utility/API";
 import M from "materialize-css";
 
 
-function SignUp({ setIsCreated }) {
+function SignUp(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
@@ -97,6 +97,9 @@ function SignUp({ setIsCreated }) {
               </div>
             </div>
             <input href="/create/user" className="input-field waves-effect waves-light btn" type="submit" value="Submit" />
+            <a>
+              <Link to="/login">Login</Link>
+            </a>
           </form>
         </div>
       </div>
