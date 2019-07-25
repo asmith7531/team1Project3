@@ -7,9 +7,8 @@ import Home from "./screens/Home";
 import Login from "./screens/Login";
 import SignUp from "./screens/SignUp";
 import SchoolSearch from "./screens/SchoolSearch";
-import ProtectedRoute from "./components/Protected"
+import ProtectedRoute from "./components/ProtectedRoute"
 import Profile from "./screens/Profile";
-import API from "./Utility/API";
 
 
 
@@ -17,7 +16,6 @@ function App(props) {
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [name, setName] = useState("");
-  // const [isCreated, setIsCreated] = useState(false);
 
   return (
     <>
@@ -32,7 +30,9 @@ function App(props) {
           />
           <Route path="/signup" component={SignUp} />
           <Route path="/schoolsearch" component={SchoolSearch} />
-          <ProtectedRoute path="/profile" loggedIn={loggedIn} name={name} component={Profile} />
+          <ProtectedRoute path="/profile" loggedIn={loggedIn} name={name} component={() => <Profile
+            setLoggedIn={setLoggedIn}
+          />} />
         </Switch>
       </Router>
     </>

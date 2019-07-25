@@ -53,7 +53,6 @@ const Login = ({ setLoggedIn, setName, history }) => {
                     type="text"
                     className="validate" />
                   <label for="userName">Username</label>
-                  <p>{username}</p>
                 </div>
                 <div className="input-field col s12">
                   <input
@@ -63,7 +62,6 @@ const Login = ({ setLoggedIn, setName, history }) => {
                     type="password"
                     className="validate" />
                   <label for="password">Password</label>
-                  <p>{password}</p>
                 </div>
                 <a>
                   <Link to="./SignUp">Or Create A New Acount</Link>

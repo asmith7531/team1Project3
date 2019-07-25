@@ -13,6 +13,11 @@ module.exports = (app) => {
     res.send('API home page')
   });
 
+  app.get('/logout', function(req, res){
+    req.logout();
+    res.json('successfully logged out');
+  });
+
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     console.log("successful login!");
     console.log(req.user);

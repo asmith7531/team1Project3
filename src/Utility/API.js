@@ -1,9 +1,5 @@
 import axios from 'axios';
-import React from 'react';
-import {
-    Route,
-    Redirect
-} from "react-router-dom";
+
 
 export default {
     newUser: function (userData, setIsCreated) {
@@ -29,5 +25,13 @@ export default {
                 alert("incorrect username or password");
                 console.log("ERROR", error);
             });
+    },
+
+    logout: function (setLoggedIn) {
+        axios.get("/logout")
+        .then(function(response) {
+            setLoggedIn(false);
+            console.log("setLoggedIn to FALSE", response);
+        })
     }
 };
