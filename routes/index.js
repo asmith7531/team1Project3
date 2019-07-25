@@ -14,9 +14,9 @@ module.exports = (app) => {
   });
 
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
-    console.log("successful login!!!");
+    console.log("successful login!");
     console.log(req.user);
-    res.json("message");
+    res.json(req.user);
   });
 
   app.post('/create/user',

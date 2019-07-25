@@ -4,33 +4,35 @@ import API from "../Utility/API";
 import Footer from "../components/Footer";
 
 
-function Login(props) {
+const Login = ({ setLoggedIn, setName, history }) => {
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleUserChange = e => setUsername(e.target.value);
+  const handlePwChange = e => setPassword(e.target.value);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (username && password) {
-      API.login({
+      API.login(
+        {
         username,
         password
-      });
-      let newUser = {
-        username,
-        password
-      };
-      alert(newUser);
-      console.log({ username });
+      },
+      setLoggedIn,
+      setName,
+      history.push
+      );
     } else {
       alert("Please input required fields");
     }
   }
 
-
   useEffect(() => {
     var elem = document.querySelector(".parallax");
     var instance = M.Parallax.init(elem);
-  });
+  }, []);
 
   return (
     <>
@@ -46,7 +48,7 @@ function Login(props) {
                 <div className="input-field col s12">
                   <input
                     value={username}
-                    onChange={e => setUsername(e.target.value)}
+                    onChange={handleUserChange}
                     id="userName"
                     type="text"
                     className="validate" />
@@ -56,7 +58,7 @@ function Login(props) {
                 <div className="input-field col s12">
                   <input
                     value={password}
-                    onChange={e => setPassword(e.target.value)}
+                    onChange={handlePwChange}
                     id="password"
                     type="password"
                     className="validate" />
@@ -65,6 +67,9 @@ function Login(props) {
                 </div>
                 <a>
                   <Link to="./SignUp">Or Create A New Acount</Link>
+                </a>
+                <a>
+                  <Link to="/profile">Profile</Link>
                 </a>
               </div>
               <input href="/create/user" className="input-field waves-effect waves-light btn" type="submit" value="Enter" />

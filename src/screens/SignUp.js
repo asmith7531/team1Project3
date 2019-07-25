@@ -15,15 +15,8 @@ function SignUp(props) {
       API.newUser({
         username,
         password
-      });
-      // let newUser = {
-      //   username,
-      //   password
-      // };
-      // alert(newUser);
-      // alert(`Username: ${username}`);
-      // alert(`Password:  ${password}`);
-      // alert('New user created');
+      }
+      );
     } else if (username && password && password !== confirm) {
       alert('Your passwords do not match.')
     } else {
@@ -104,6 +97,9 @@ function SignUp(props) {
               </div>
             </div>
             <input href="/create/user" className="input-field waves-effect waves-light btn" type="submit" value="Submit" />
+            <a>
+              <Link to="/login">Login</Link>
+            </a>
           </form>
         </div>
       </div>
