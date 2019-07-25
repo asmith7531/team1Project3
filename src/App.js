@@ -32,6 +32,7 @@ function App(props) {
           <Route path="/schoolsearch" component={SchoolSearch} />
           <ProtectedRoute path="/profile" loggedIn={loggedIn} name={name} component={() => <Profile
             setLoggedIn={setLoggedIn}
+            name={name}
           />} />
         </Switch>
       </Router>

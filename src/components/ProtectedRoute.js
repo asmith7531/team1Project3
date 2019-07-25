@@ -16,7 +16,8 @@ const ProtectedRoute = ({ component: Comp, loggedIn, name, path, ...rest }) => {
                     console.log(props);
                     return <Comp {...props} name={name} />
                 } else {
-                    return <Redirect to='/login' />
+                    alert("Please Login or Create an Account");
+                    return < Redirect to='/login' />
                 };
             }}
         />

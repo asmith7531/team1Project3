@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 export default {
-    newUser: function (userData, setIsCreated) {
+    newUser: function (userData) {
         console.log("message", userData);
         axios.post('/create/user', userData)
         .then(function(response) {
