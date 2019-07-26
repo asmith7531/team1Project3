@@ -1,12 +1,55 @@
 import React, { Component } from "react";
 import NavBar from "../components/NavBar";
 import M from "materialize-css";
-import Degrees from "../components/CollegeSearchForm/Degrees";
-import States from "../components/CollegeSearchForm/States";
-import Size from "../components/CollegeSearchForm/Size";
-import Name from "../components/CollegeSearchForm/Name";
-
+// import API from "../Utility/API";
+import Indeed from "indeed-scrapper";
 export default class CareerSearch extends Component {
+  // class FlavorForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      queryOptions: {
+        host: "www.indeed.com",
+        query: "Software",
+        city: "Seattle, WA",
+        radius: "25",
+        level: "entry_level",
+        jobType: "fulltime",
+        maxAge: "7",
+        sort: "date",
+        limit: 100
+      }
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.setStateValue = this.setStateQuery.bind(this);
+    Indeed.query(queryOptions).then(res => {
+      console.log(res); // An array of Job objects
+    });
+  }
+
+  handleChange(event) {
+    this.setState({ query: event.target.queryOptions.query });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    alert("Your query is: " + this.state.queryOptions.query);
+
+    API.Indeed(this.state.queryOptions)
+      .then(res => {
+        // console.log(res.data.results);
+        if (res.data.items === "error") {
+          throw new Error(res.data.results);
+        } else {
+          let results = res.data.results;
+          this.setState({ school_info: results, error: "" });
+        }
+      })
+      .catch(err => this.setState({ error: err.items }));
+  }
+
   componentDidMount() {
     M.AutoInit();
   }
@@ -19,54 +62,23 @@ export default class CareerSearch extends Component {
             <h3>Find Careers - this is incomplete</h3>
             <h5 className="white-text">Find your perfect career.</h5>
           </div>
-          {/* <div className="col s12 m6 l6"> */}
-          <form className="">
-            <div className="">
-              <ul className="collapsible">
-                <li>
-                  <div className="collapsible-header">
-                    <i className="material-icons">school</i>Programs and Degrees
-                  </div>
-                  <div className="collapsible-body">
-                    <Degrees />
-                  </div>
-                </li>
-                <li>
-                  <div className="collapsible-header">
-                    <i className="material-icons">place</i>Location
-                  </div>
-                  <div className="collapsible-body">
-                    <States />
-                  </div>
-                </li>
-                <li>
-                  <div className="collapsible-header">
-                    <i className="material-icons">group</i>Size
-                  </div>
-                  <div className="collapsible-body">
-                    <Size />
-                  </div>
-                </li>
-                <li>
-                  <div className="collapsible-header">
-                    <i className="material-icons">location_city</i>Name
-                  </div>
-                  <div className="collapsible-body">
-                    <Name />
-                  </div>
-                </li>
-                <li>
-                  <div className="collapsible-header">
-                    <i className="material-icons">settings</i>Advanced
-                  </div>
-                  <div className="collapsible-body">
-                    <span>
-                      Going to hold off on this for now. IDK what the api query
-                      parameters will be.
-                    </span>
-                  </div>
-                </li>
-              </ul>
+          <div class="row card-panel">
+            <form onSubmit={this.handleSubmit} class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input
+                    id="query"
+                    type="text"
+                    onChange={this.handleChange}
+                    class="validate"
+                  />
+                  <label for="query">Search</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="city" type="text" class="validate" />
+                  <label for="city">City</label>
+                </div>
+              </div>
               <button
                 className="btn waves-effect amber accent waves-light"
                 type="submit"
@@ -75,9 +87,8 @@ export default class CareerSearch extends Component {
                 Search
                 <i className="material-icons right">search</i>
               </button>
-            </div>
-          </form>
-          {/* </div> */}
+            </form>
+          </div>
         </div>
       </div>
     );
