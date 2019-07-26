@@ -19,6 +19,7 @@ export default {
                 alert(`logged in as ${response.data.username}`);
                 setLoggedIn(true);
                 setName(response.data.username);
+                setUserSince(response.data.createdAt);
                 push("/profile");
             })
             .catch(function (error) {

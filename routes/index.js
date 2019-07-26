@@ -4,7 +4,7 @@ const db = require('../models/index');
 const collegeController = require("../controllers/collegeController");
 const passport = require("../config/passport");
 
-const { College, User } = db;
+const { User } = db;
 
 
 module.exports = (app) => {

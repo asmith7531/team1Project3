@@ -9,7 +9,7 @@ import SignUp from "./screens/SignUp";
 import SchoolSearch from "./screens/SchoolSearch";
 import CareerSearch from "./screens/CareerSearch";
 import Survey from "./screens/Survey";
-import Profile from "./screens/Profile";
+import Profile from "./screens/Profile/Profile";
 
 import ProtectedRoute from "./components/ProtectedRoute"
 
@@ -17,6 +17,7 @@ function App(props) {
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [name, setName] = useState("");
+  const [userSince, setUserSince] = usetState("");
 
   return (
     <>
@@ -25,6 +26,7 @@ function App(props) {
           <Route exact path="/" component={Home} />
           <Route path="/login" component={({ history }) => <Login
             setLoggedIn={setLoggedIn}
+            setUserSince={setUserSince}
             setName={setName}
             history={history}
           />}
@@ -35,6 +37,7 @@ function App(props) {
           <Route path="/survey" component={Survey}/>
           <ProtectedRoute path="/profile" loggedIn={loggedIn} name={name} component={() => <Profile
             setLoggedIn={setLoggedIn}
+            userSince={userSince}
             name={name}
           />} />
         </Switch>
