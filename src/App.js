@@ -12,7 +12,6 @@ import Survey from "./screens/Survey";
 import Profile from "./screens/Profile";
 
 import ProtectedRoute from "./components/ProtectedRoute"
-import API from "./Utility/API";
 
 function App(props) {
 

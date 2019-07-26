@@ -4,10 +4,12 @@
   "main": "index.js",
   "proxy": "http://localhost:3005",
   "scripts": {
-    "start": "nodemon server/index.js",
-    "dev": "./node_modules/.bin/webpack-dev-server --env.dev --mode development && node server/index.js",
+    "start": "node server/index.js",
+    "startDevServer": "nodemon server/index.js",
+    "webpackDevServer": "./node_modules/.bin/webpack-dev-server --env.dev --mode development",
     "build": "./node_modules/.bin/webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/npm-run-all --parallel build startDevServer webpackDevServer"
   },
   "repository": "https://github.com/asmith7531/team1project3.git",
   "author": "michaelikang <michaelikang94@gmail.com>",
@@ -41,6 +43,7 @@
     "exports-loader": "^0.7.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
     "postcss-loader": "^3.0.0",
     "react-hot-loader": "^4.12.6",
     "sass-loader": "^7.1.0",
