@@ -2,14 +2,21 @@ var express = require('express')
 var router = express.Router()
 const db = require('../models/index');
 const collegeController = require("../controllers/collegeController");
+const passport = require("../config/passport");
 
-const { College , User } = db;
+const { College, User } = db;
 
 
 module.exports = (app) => {
 
   app.get('/api', function (req, res) {
     res.send('API home page')
+  });
+
+  app.post("/api/login", passport.authenticate("local"), (req, res) => {
+    console.log("successful login!");
+    console.log(req.user);
+    res.json(req.user);
   });
 
   app.post('/create/user',

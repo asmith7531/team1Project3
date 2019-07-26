@@ -15,15 +15,8 @@ function SignUp(props) {
       API.newUser({
         username,
         password
-      });
-      let newUser = {
-        username,
-        password
-      };
-      alert(newUser);
-      alert(`Username: ${username}`);
-      alert(`Password:  ${password}`);
-      alert('New user created');
+      }
+      );
     } else if (username && password && password !== confirm) {
       alert('Your passwords do not match.')
     } else {
@@ -64,17 +57,7 @@ function SignUp(props) {
                   onChange={e => setUsername(e.target.value)}
                 />
                 <label for="first_name">Username</label>
-                <p>{username}</p>
               </div>
-              {/* <div className="input-field col s6">
-                <input
-                  id="last_name"
-                  type="text"
-                  className="validate"
-                  data-length="20"
-                />
-                <label for="last_name">Last Name</label>
-              </div> */}
             </div>
             <div className="row">
               <div className="input-field col s12">
@@ -98,7 +81,6 @@ function SignUp(props) {
                   onChange={e => setPassword(e.target.value)}
                 />
                 <label for="password">Password</label>
-                <p>{password}</p>
               </div>
             </div>
             <div className="row ">
@@ -112,10 +94,12 @@ function SignUp(props) {
                   onChange={e => setConfirm(e.target.value)}
                 />
                 <label for="confirmPassword">Confirm Password</label>
-                <p>{confirm}</p>
               </div>
             </div>
             <input href="/create/user" className="input-field waves-effect waves-light btn" type="submit" value="Submit" />
+            <a>
+              <Link to="/login">Login</Link>
+            </a>
           </form>
         </div>
       </div>

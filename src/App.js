@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { hot } from "react-hot-loader/root";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./styles/css/materialize.css";
@@ -9,20 +9,37 @@ import SignUp from "./screens/SignUp";
 import SchoolSearch from "./screens/SchoolSearch";
 import CareerSearch from "./screens/CareerSearch";
 import Survey from "./screens/Survey";
+import Profile from "./screens/Profile";
 
-const App = () => (
-  <>
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/schoolsearch" component={SchoolSearch} />
-        <Route path="/careersearch" component={CareerSearch} />
-        <Route path="/survey" component={Survey}/>
-      </Switch>
-    </Router>
-  </>
-);
+import ProtectedRoute from "./components/Protected"
+import API from "./Utility/API";
+
+function App(props) {
+
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [name, setName] = useState("");
+  // const [isCreated, setIsCreated] = useState(false);
+
+  return (
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={({ history }) => <Login
+            setLoggedIn={setLoggedIn}
+            setName={setName}
+            history={history}
+          />}
+          />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/schoolsearch" component={SchoolSearch} />
+          <Route path="/careersearch" component={CareerSearch} />
+          <Route path="/survey" component={Survey}/>
+          <ProtectedRoute path="/profile" loggedIn={loggedIn} name={name} component={Profile} />
+        </Switch>
+      </Router>
+    </>
+  )
+};
 
 export default hot(App);
