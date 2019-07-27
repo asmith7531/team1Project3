@@ -16,19 +16,20 @@ const Profile = ({ name,  userSince, setLoggedIn }) => {
         API.logout(setLoggedIn)
     };
 
-    const getArticles = (e) => {
-        e.preventDefault();
-        API.getArticles();
-    }
+    // const getArticles = (e) => {
+    //     e.preventDefault();
+    //     API.getArticles();
+    // }
 
     useEffect(() => {
         M.AutoInit();
+        API.getArticles();
     })
 
 
     return (
         <>
-        <button onClick={getArticles}><a>Logout</a></button>
+        {/* <button onClick={getArticles}><a>Logout</a></button> */}
             <nav>
                 <div className="nav-wrapper">
                     <a href="#" className="brand-logo"><Link to="/profile">Welcome</Link></a>
