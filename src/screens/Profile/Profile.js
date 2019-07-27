@@ -4,15 +4,22 @@ import { Link } from "react-router-dom";
 import M from "materialize-css";
 import views from './views.jpg';
 import './styles.css';
+const { getArticles } = API;
 
 
 
-const Profile = ({ name, setLoggedIn, userSince }) => {
+
+const Profile = ({ name,  userSince, setLoggedIn }) => {
 
     const handleLogout = (e) => {
         e.preventDefault();
-        API.logout(setLoggedIn, setUserSince)
+        API.logout(setLoggedIn)
     };
+
+    const getArticles = (e) => {
+        e.preventDefault();
+        API.getArticles();
+    }
 
     useEffect(() => {
         M.AutoInit();
@@ -21,6 +28,7 @@ const Profile = ({ name, setLoggedIn, userSince }) => {
 
     return (
         <>
+        <button onClick={getArticles}><a>Logout</a></button>
             <nav>
                 <div className="nav-wrapper">
                     <a href="#" className="brand-logo"><Link to="/profile">Welcome</Link></a>
@@ -48,7 +56,7 @@ const Profile = ({ name, setLoggedIn, userSince }) => {
                     <a href="#user"><img className="circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Toxq1hE3a7ePm_JbJGOyzSEjzUPlk_6gk9kuibe9HFgr7-s0xQ" /></a>
                     <h3>Hello,</h3>
                     <h5>{name}</h5>
-                    <p>Respected Member since: {userSince}</p>
+                    <p>Member since: {userSince}</p>
                 </div></li>
                 <li><a className="subheader">View..</a></li>
                 <li><a href="#!">My Colleges</a></li>

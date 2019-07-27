@@ -10,14 +10,15 @@ import SchoolSearch from "./screens/SchoolSearch";
 import CareerSearch from "./screens/CareerSearch";
 import Survey from "./screens/Survey";
 import Profile from "./screens/Profile/Profile";
-
 import ProtectedRoute from "./components/ProtectedRoute"
+
+
 
 function App(props) {
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [name, setName] = useState("");
-  const [userSince, setUserSince] = usetState("");
+  const [userSince, setUserSince] = useState("");
 
   return (
     <>
@@ -34,7 +35,7 @@ function App(props) {
           <Route path="/signup" component={SignUp} />
           <Route path="/schoolsearch" component={SchoolSearch} />
           <Route path="/careersearch" component={CareerSearch} />
-          <Route path="/survey" component={Survey}/>
+          <Route path="/survey" component={Survey} />
           <ProtectedRoute path="/profile" loggedIn={loggedIn} name={name} component={() => <Profile
             setLoggedIn={setLoggedIn}
             userSince={userSince}

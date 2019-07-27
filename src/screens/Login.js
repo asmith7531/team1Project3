@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import API from "../Utility/API";
 import Footer from "../components/Footer";
+import Axios from "axios";
 
 
-const Login = ({ setLoggedIn, setName, setUserSince, history }) => {
+const Login = ({ setLoggedIn, setUserSince, setName, history }) => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,13 +18,13 @@ const Login = ({ setLoggedIn, setName, setUserSince, history }) => {
     if (username && password) {
       API.login(
         {
-        username,
-        password
-      },
-      setLoggedIn,
-      setName,
-      setUserSince,
-      history.push
+          username,
+          password
+        },
+        setLoggedIn,
+        setUserSince,
+        setName,
+        history.push
       );
     } else {
       alert("Please input required fields");
@@ -33,6 +34,7 @@ const Login = ({ setLoggedIn, setName, setUserSince, history }) => {
   useEffect(() => {
     var elem = document.querySelector(".parallax");
     var instance = M.Parallax.init(elem);
+    Axios.post('/api/articles').then(feedback => console.log(feedback));
   }, []);
 
   return (
