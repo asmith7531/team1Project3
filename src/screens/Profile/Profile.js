@@ -4,32 +4,28 @@ import { Link } from "react-router-dom";
 import M from "materialize-css";
 import views from './views.jpg';
 import './styles.css';
-const { getArticles } = API;
 
 
 
 
-const Profile = ({ name,  userSince, setLoggedIn }) => {
+const Profile = ({ name, userSince, setLoggedIn, setArticles, articleData }) => {
 
     const handleLogout = (e) => {
         e.preventDefault();
         API.logout(setLoggedIn)
     };
 
-    // const getArticles = (e) => {
-    //     e.preventDefault();
-    //     API.getArticles();
-    // }
+    const handleArticles = (e) => {
+        API.getArticles(setArticles);
+    }
 
     useEffect(() => {
         M.AutoInit();
-        API.getArticles();
-    })
+    });
 
 
     return (
         <>
-        {/* <button onClick={getArticles}><a>Logout</a></button> */}
             <nav>
                 <div className="nav-wrapper">
                     <a href="#" className="brand-logo"><Link to="/profile">Welcome</Link></a>

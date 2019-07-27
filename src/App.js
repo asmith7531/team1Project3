@@ -19,7 +19,9 @@ function App(props) {
   const [loggedIn, setLoggedIn] = useState(false);
   const [name, setName] = useState("");
   const [userSince, setUserSince] = useState("");
+  const [articles, setArticles] = useState([]);
 
+  console.log(articles);
   return (
     <>
       <Router>
@@ -39,7 +41,9 @@ function App(props) {
           <ProtectedRoute path="/profile" loggedIn={loggedIn} name={name} component={() => <Profile
             setLoggedIn={setLoggedIn}
             userSince={userSince}
+            setArticles={setArticles}
             name={name}
+            articles={articles}
           />} />
         </Switch>
       </Router>

@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-
-
-
 export default {
     newUser: function (userData) {
         console.log("message", userData);
@@ -40,10 +37,14 @@ export default {
             })
     },
 
-    getArticles: function() {
+    getArticles: function (setArticles) {
         axios.get("/api/articles")
-            .then(function(feedback) {
-                console.log("hopefully every article", feedback);
+            .then(function (articles) {
+                console.log("hopefully every article", articles);
+                setArticles(articles.data);
             })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 };
