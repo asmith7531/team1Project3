@@ -7,20 +7,20 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 module.exports = {
     entry: [
-      'react-hot-loader/patch',
-      //activate HMR for React
+        'react-hot-loader/patch',
+        //activate HMR for React
 
-      'webpack-dev-server/client?http://localhost:8080',
-      //bundle the client for webpack dev server
-      //and connect to the provided endpoint
+        'webpack-dev-server/client?http://localhost:8080',
+        //bundle the client for webpack dev server
+        //and connect to the provided endpoint
 
-      'webpack/hot/only-dev-server',
-      //bundle the client for hot reloading
-      //only- means to only hot reload for successful updates
+        'webpack/hot/only-dev-server',
+        //bundle the client for hot reloading
+        //only- means to only hot reload for successful updates
 
 
-      './src/index.js'
-      //the entry point of our app
+        './src/index.js'
+        //the entry point of our app
     ],
     output: { // NEW
         path: path.join(__dirname, 'dist'),
@@ -29,13 +29,13 @@ module.exports = {
     devtool: 'inline-source-map',
 
     devServer: {
-      hot: true,
-      //activate hot reloading
+        hot: true,
+        //activate hot reloading
 
-      contentBase: '/dist',
-      //match the output path
-      publicPath: '/'
-      //match the output publicPath
+        contentBase: '/dist',
+        //match the output path
+        publicPath: '/'
+        //match the output publicPath
     },
     plugins: [
         htmlPlugin,
@@ -54,11 +54,19 @@ module.exports = {
                 }
             },
             {
-                test:/\.(s*)css$/,
-                use:['style-loader','css-loader', 'sass-loader']
-             }
-                ]
-            }
-        
-    
+                test: /\.(s*)css$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {},
+                    },
+                ],
+            },
+        ]
+    }
+
 };
