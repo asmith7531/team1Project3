@@ -1,5 +1,4 @@
 import React from "react";
-import M from "materialize-css";
 import {
     Route,
     Redirect
@@ -17,8 +16,8 @@ const ProtectedRoute = ({ component: Comp, loggedIn, name, path, ...rest }) => {
                     console.log(props);
                     return <Comp {...props} name={name} />
                 } else {
-
-                    <Redirect to='/login' />
+                    alert("Please Login or Create an Account");
+                    return < Redirect to='/login' />
                 };
             }}
         />
@@ -26,5 +25,3 @@ const ProtectedRoute = ({ component: Comp, loggedIn, name, path, ...rest }) => {
 };
 
 export default ProtectedRoute;
-
-

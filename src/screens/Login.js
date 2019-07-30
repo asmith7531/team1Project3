@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import API from "../Utility/API";
 import Footer from "../components/Footer";
+import Axios from "axios";
 
 
-const Login = ({ setLoggedIn, setName, history }) => {
+const Login = ({ setLoggedIn, setUserSince, setName, history }) => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,12 +18,13 @@ const Login = ({ setLoggedIn, setName, history }) => {
     if (username && password) {
       API.login(
         {
-        username,
-        password
-      },
-      setLoggedIn,
-      setName,
-      history.push
+          username,
+          password
+        },
+        setLoggedIn,
+        setUserSince,
+        setName,
+        history.push
       );
     } else {
       alert("Please input required fields");
@@ -32,6 +34,7 @@ const Login = ({ setLoggedIn, setName, history }) => {
   useEffect(() => {
     var elem = document.querySelector(".parallax");
     var instance = M.Parallax.init(elem);
+    Axios.post('/api/articles').then(feedback => console.log(feedback));
   }, []);
 
   return (
@@ -53,7 +56,6 @@ const Login = ({ setLoggedIn, setName, history }) => {
                     type="text"
                     className="validate" />
                   <label for="userName">Username</label>
-                  <p>{username}</p>
                 </div>
                 <div className="input-field col s12">
                   <input
@@ -63,7 +65,6 @@ const Login = ({ setLoggedIn, setName, history }) => {
                     type="password"
                     className="validate" />
                   <label for="password">Password</label>
-                  <p>{password}</p>
                 </div>
                 <a>
                   <Link to="./SignUp">Or Create A New Acount</Link>
