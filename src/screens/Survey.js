@@ -1,517 +1,244 @@
-import React, { Component } from "react";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer"
-import M from "materialize-css";
+import React, { Component } from 'react';
+import Quiz from '../components/CareerSurvey/Quiz.js';
+import quizQuestions from '../Utility/quizQuestions';
+import Result from '../components/CareerSurvey/Result'
 
-export default class Survey extends Component {
+// import hat from '../dist/graduation-icon-png-1.jpg';
+import '../styles/Survey.css';
+
+class Survey extends Component {
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      counter: 0,
+      questionId: 1,
+      question: '',
+      answerOptions: [],
+      answer: '',
+      answersCount: {
+        Academics: {
+          Accounting: 0,
+          Anthropology: 0,
+          ArtHistory: 0,
+          Biochemistry: 0,
+          Biology: 0,
+          Chemistry: 0,
+          CommStudies: 0,
+          ComputerSci: 0,
+          Dance: 0,
+          Economics: 0,
+          Education: 0,
+          Engineering: 0,
+          English: 0,
+          ExerciseSci: 0,
+          EnvironmentalPolicy: 0,
+          EnvironmentalSci: 0,
+          FilmDigitalMedia: 0,
+          Finance: 0,
+          ForensicSci: 0,
+          History: 0,
+          Geography: 0,
+          GraphicDesign: 0,
+          InfoTech: 0,
+          Journalism: 0,
+          Latin: 0,
+          Marketing: 0,
+          Mathematics: 0,
+          Music: 0,
+          Nursing: 0,
+          Philosophy: 0,
+          Physics: 0,
+          PoliticalSci: 0,
+          PreLaw: 0,
+          Psychology: 0,
+          ReligiousStudies: 0,
+          SocialWork: 0,
+          Sociology: 0,
+          Statistics: 0,
+          StudioArt: 0,
+          Theater: 0,
+          WomenGenderStudies: 0
+        }
+      },
+      result: ''
+    };
+
+    this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
+  }
+
   componentDidMount() {
-    M.AutoInit();
+    const answerOptions = quizQuestions.map(question => question.answers);  
+  
+    this.setState({
+      question: quizQuestions[0].question,
+      answerOptions: answerOptions[0]
+    });
+  }
+
+  setUserAnswer(answer) {
+    const answersCount = this.state.answersCount
+    let applyAnswer = answer => {
+      const answer_array = answer.split(",")
+
+      if (answer_array.length === 1) {
+        console.log("reply of no")
+
+      } else if (answer_array.length === 2) {
+        let first_answer = answer_array[0]
+        let second_answer = answer_array[1]
+        answersCount['Academics'][first_answer] += 1
+        answersCount['Academics'][second_answer] += 1
+
+      } else if (answer_array.length === 3) {
+        let first_answer = answer_array[0]
+        let second_answer = answer_array[1]
+        let third_answer = answer_array[2]
+        answersCount['Academics'][first_answer] += 1
+        answersCount['Academics'][second_answer] += 1
+        answersCount['Academics'][third_answer] += 1
+
+      } else if (answer_array.length === 4) {
+        let first_answer = answer_array[0]
+        let second_answer = answer_array[1]
+        let third_answer = answer_array[2]
+        let fourth_answer = answer_array[3]
+        answersCount['Academics'][first_answer] += 1
+        answersCount['Academics'][second_answer] += 1
+        answersCount['Academics'][third_answer] += 1
+        answersCount['Academics'][fourth_answer] += 1
+
+      } else if (answer_array.length === 5) {
+        let first_answer = answer_array[0]
+        let second_answer = answer_array[1]
+        let third_answer = answer_array[2]
+        let fourth_answer = answer_array[3]
+        let fifth_answer = answer_array[4]
+        answersCount['Academics'][first_answer] += 1
+        answersCount['Academics'][second_answer] += 1
+        answersCount['Academics'][third_answer] += 1
+        answersCount['Academics'][fourth_answer] += 1
+        answersCount['Academics'][fifth_answer] += 1
+        
+      } else if (answer_array.length === 6) {
+        let first_answer = answer_array[0]
+        let second_answer = answer_array[1]
+        let third_answer = answer_array[2]
+        let fourth_answer = answer_array[3]
+        let fifth_answer = answer_array[4]
+        let sixth_answer = answer_array[5]
+        answersCount['Academics'][first_answer] += 1
+        answersCount['Academics'][second_answer] += 1
+        answersCount['Academics'][third_answer] += 1
+        answersCount['Academics'][fourth_answer] += 1
+        answersCount['Academics'][fifth_answer] += 1
+        answersCount['Academics'][sixth_answer] += 1
+
+      }  else if (answer_array.length === 7) {
+        let first_answer = answer_array[0]
+        let second_answer = answer_array[1]
+        let third_answer = answer_array[2]
+        let fourth_answer = answer_array[3]
+        let fifth_answer = answer_array[4]
+        let sixth_answer = answer_array[5]
+        let seventh_answer = answer_array[6]
+        answersCount['Academics'][first_answer] += 1
+        answersCount['Academics'][second_answer] += 1
+        answersCount['Academics'][third_answer] += 1
+        answersCount['Academics'][fourth_answer] += 1
+        answersCount['Academics'][fifth_answer] += 1
+        answersCount['Academics'][sixth_answer] += 1
+        answersCount['Academics'][seventh_answer] += 1
+      } 
+
+      return answersCount
+    }
+
+    this.setState({
+      answersCount: applyAnswer(answer),
+      answer: answer
+    })
+
+    console.log("this.state: " + JSON.stringify(this.state));
+    console.log("this.state.answer: " + JSON.stringify(this.state.answer));
+  }
+
+  handleAnswerSelected(event) {
+    this.setUserAnswer(event.currentTarget.value);
+    if (this.state.questionId < quizQuestions.length) {
+        setTimeout(() => this.setNextQuestion(), 500);
+      } else {
+        setTimeout(() => this.setResults(this.getResults()), 500);
+      }
+  }
+
+  setNextQuestion() {
+    const counter = this.state.counter + 1;
+    const questionId = this.state.questionId + 1;
+    this.setState({
+      counter: counter,
+      questionId: questionId,
+      question: quizQuestions[counter].question,
+      answerOptions: quizQuestions[counter].answers,
+      answer: ''
+    });
+  }
+
+  getResults() {
+    const answersCount = this.state.answersCount;
+    console.log(answersCount);
+    const academicAnswer = answersCount['Academics'];
+    console.log(academicAnswer);
+    const answersCountKeys = Object.keys(academicAnswer);
+    console.log(answersCountKeys);
+    const answersCountValues = answersCountKeys.map((key) => academicAnswer[key]);
+    console.log(answersCountValues);
+    const maxAnswerCount = Math.max.apply(null, answersCountValues);
+    console.log(maxAnswerCount);
+    console.log("x194x: " + answersCountKeys.filter((key) => academicAnswer[key] === maxAnswerCount));
+  
+    return answersCountKeys.filter((key) => academicAnswer[key] === maxAnswerCount);
+  }
+
+  setResults (result) {
+    if (result.length === 1) {
+      this.setState({ result: result[0] });
+    } else if (result.length >= 2) {
+      this.setState({ result: result[0] + " and/or " + result[1] });
+    } else {
+      this.setState({ result: 'Undetermined' });
+    }
+  }
+
+  renderQuiz() {
+    return (
+      <Quiz
+        answer={this.state.answer}
+        answerOptions={this.state.answerOptions}
+        questionId={this.state.questionId}
+        question={this.state.question}
+        questionTotal={quizQuestions.length}
+        onAnswerSelected={this.handleAnswerSelected}
+      />
+    );
+  }
+
+  renderResult() {
+    return <Result quizResult={this.state.result} />;
   }
 
   render() {
     return (
-      <>
-      <NavBar />
-        
-      <div className="container center-align">
-        <div className="row">
-          <h3>Find your Passion</h3>  
-         
-        <form action="#">
-
-          <div className="row left-align">
-            <h5>I like science and mathemetaics,  </h5>
-            <div className="col s-6">
-            <label>
-              <input name="group1" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group1" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-                  
-          <div className="row left-align">
-            <h5>This is Question 2</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group2" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group2" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 3</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group3" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group3" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 4?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group4" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group4" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 5?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group5" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group5" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 6?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group6" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group6" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 7?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group7" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group7" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 8?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group8" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group8" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 9?</h5>
-
-            <div className="col s-6">
-            <label>
-              <input name="group9" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group9" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 10?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group10" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group10" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 11?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group11" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group11" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 12?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group12" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group12" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 13?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group13" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group13" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 14?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group14" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group14" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 15?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group15" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group15" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 16?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group16" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group16" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 17?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group17" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group17" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 18?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group18" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group18" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 19?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group19" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group19" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 20?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group20" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group20" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 21?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group21" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group21" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 22?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group22" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group22" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 23?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group23" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group23" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 24?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group24" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group24" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 25?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group25" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group25" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 26?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group26" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group26" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 27?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group27" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group27" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 28?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group28" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group28" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 29?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group29" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group29" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-          <div className="row left-align">
-            <h5>This is Question 30?</h5>
-            <div className="col s-6">
-            <label>
-              <input name="group30" type="radio"/>
-              <span>Yes</span>
-            </label>
-            </div>
-            <div className="col s-6">
-            <label>
-              <input class="with-gap" name="group30" type="radio"/>
-              <span>No</span>
-            </label>
-            </div>
-          </div>
-
-    </form>
-
-
-    <button type="submit" className="btn btn-primary btn-lg btn-block" id="submit"><i className="fa fa-check-circle" aria-hidden="true"></i>
-      Submit</button>
-    </div>
-
-  </div>
-
-     <Footer/>
-       </>
-
+      <div className="App">
+        <div className="App-header">
+          <img src={hat} className="App-logo" alt="logo" />
+          <h2>Career Survey</h2>
+          <h5>College, Trades, Certification programs and more - find what suits you best</h5>
+        </div>
+        {this.state.result ? this.renderResult() : this.renderQuiz()}
+      </div>
     );
   }
 }
+
+export default Survey;
