@@ -5,31 +5,31 @@
 } */
 
 .sidenav li > a:hover {
-    background-color: #0d47a1;
-    padding-top: 15px;
-  }
+  background-color: #0d47a1;
+  padding-top: 15px;
+}
 
-  nav a {
-      color: #0d47a1!important;
-  }
+nav a {
+    color: #0d47a1!important;
+}
 
-  nav {
-    background-color: #ffd600!important;
-  }
+nav {
+  background-color: #ffd600!important;
+}
 
-  ul {
-    color: #fff59d;
-    text-align: right;
-  }
+ul {
+  color: #fff59d;
+  text-align: right;
+}
 
 /* .articles {
-    color: #0d47a1!important;
-    box-shadow: 3px 5px 12px 9px #888888;
-    text-align: center!important;
+  color: #0d47a1!important;
+  box-shadow: 3px 5px 12px 9px #888888;
+  text-align: center!important;
 } */
 
 .user-view {
-    text-align: right;
-    line-height: 79px;
-    color: #c62828;
+  text-align: right;
+  line-height: 79px;
+  color: #c62828;
 }
