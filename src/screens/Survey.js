@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Quiz from '../components/CareerSurvey/Quiz';
 import quizQuestions from '../Utility/quizQuestions';
-import Result from '../components/CareerSurvey/Result'
+import Result from '../components/CareerSurvey/Result';
+import NavBar from "../components/NavBar";
 
 // import hat from '../dist/graduation-icon-png-1.jpg';
+import M from "materialize-css";
 import '../styles/Survey.css';
 
 class Survey extends Component {
