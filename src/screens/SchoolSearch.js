@@ -40,12 +40,12 @@ export default class SchoolSearch extends Component {
     this.addCollege = this.addCollege.bind(this);
   }
 
-  // addCollege(e) {
-  //   createCollege({
-  //     name: e.target.value,
-  //     UserId: this.props.id
-  //   })
-  // }
+  addCollege(e) {
+    createCollege({
+      name: e.target.value,
+      UserId: this.props.id
+    })
+  }
 
   handleChange(event) {
     this.setState({ value: event.target.value });
