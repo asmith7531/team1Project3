@@ -7,10 +7,9 @@ export default {
             .then(function (response) {
                 alert(`Hello ${response.data.username}. Click Login`);
                 console.log(response);
-
             });
     },
-    login: function (userData, setLoggedIn, setUserSince, setName, push) {
+    login: function (userData, setLoggedIn, setUserSince, setName, setId, push) {
         console.log("message", userData);
         axios.post('/api/login', userData)
             .then(function (response) {
@@ -21,6 +20,7 @@ export default {
                 let formattedDate = date.slice(0, 10);
                 setUserSince(formattedDate);
                 setName(response.data.username);
+                setId(response.data.id);
                 push("/profile");
             })
             .catch(function (error) {

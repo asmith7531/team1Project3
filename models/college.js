@@ -9,7 +9,8 @@ module.exports = function (sequelize, DataTypes) {
         city: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
+        
     });
 
     College.associate = models => {

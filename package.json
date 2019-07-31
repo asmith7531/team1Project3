@@ -34,6 +34,7 @@
     "react-images": "^1.0.0",
     "react-router-dom": "^5.0.1",
     "sass": "^1.22.5",
+    "semantic-ui-react": "^0.87.3",
     "sequelize": "^5.10.1"
   },
   "devDependencies": {

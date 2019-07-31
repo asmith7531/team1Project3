@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Axios from "axios";
 
 
-const Login = ({ setLoggedIn, setUserSince, setName, history }) => {
+const Login = ({ setLoggedIn, setUserSince, setName, setId, history }) => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,6 +24,7 @@ const Login = ({ setLoggedIn, setUserSince, setName, history }) => {
         setLoggedIn,
         setUserSince,
         setName,
+        setId,
         history.push
       );
     } else {
