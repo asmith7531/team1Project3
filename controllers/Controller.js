@@ -2,7 +2,7 @@ const db = require("../models/index");
 const chalk = require('chalk');
 const log = console.log;
 
-const { User, Article } = db;
+const { User, Article, College } = db;
 
 module.exports = {
     createUser: function (req, res) {
@@ -18,6 +18,22 @@ module.exports = {
                 console.log("err", err);
                 res.status(422).json(err)
             });
+    },
+
+    createCollege: function(req, res) {
+        console.log("TESTING CREATE COLLLGE FUNCTION");
+        College
+            .create(req.body)
+            .then(
+                dbModel => {
+                    console.log("MADE A NEW COLLEGE");
+                    res.json(dbModel);
+                }
+            )
+            .catch(err => {
+                console.log("err", err);
+                res.status(422).json(err);
+            })
     },
 
     getArticles: function (req, res) {

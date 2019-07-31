@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { hot } from "react-hot-loader/root";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./styles/css/materialize.css";
@@ -15,7 +15,7 @@ import ProtectedRoute from "./components/ProtectedRoute"
 
 
 function App(props) {
-
+  const [id, setId] = useState("")
   const [loggedIn, setLoggedIn] = useState(false);
   const [name, setName] = useState("");
   const [userSince, setUserSince] = useState("");
@@ -31,6 +31,7 @@ function App(props) {
             setLoggedIn={setLoggedIn}
             setUserSince={setUserSince}
             setName={setName}
+            setId={setId}
             history={history}
           />}
           />
@@ -43,6 +44,7 @@ function App(props) {
             userSince={userSince}
             setArticles={setArticles}
             name={name}
+            id={id}
             articles={articles}
           />} />
         </Switch>
