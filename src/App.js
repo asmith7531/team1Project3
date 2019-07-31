@@ -8,7 +8,7 @@ import Login from "./screens/Login";
 import SignUp from "./screens/SignUp";
 import SchoolSearch from "./screens/SchoolSearch";
 import CareerSearch from "./screens/CareerSearch";
-import Survey from "./screens/Survey";
+import Survey from "./screens/Survey/Survey";
 import Profile from "./screens/Profile/Profile";
 import ProtectedRoute from "./components/ProtectedRoute"
 
