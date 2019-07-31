@@ -10,36 +10,53 @@ import SchoolSearch from "./screens/SchoolSearch";
 import CareerSearch from "./screens/CareerSearch";
 import Survey from "./screens/Survey/Survey";
 import Profile from "./screens/Profile";
-
-import ProtectedRoute from "./components/Protected"
-import API from "./Utility/API";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App(props) {
-
   const [loggedIn, setLoggedIn] = useState(false);
   const [name, setName] = useState("");
-  // const [isCreated, setIsCreated] = useState(false);
+  const [userSince, setUserSince] = useState("");
+  const [articles, setArticles] = useState([]);
 
+  console.log(articles);
   return (
     <>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/login" component={({ history }) => <Login
-            setLoggedIn={setLoggedIn}
-            setName={setName}
-            history={history}
-          />}
+          <Route
+            path="/login"
+            component={({ history }) => (
+              <Login
+                setLoggedIn={setLoggedIn}
+                setUserSince={setUserSince}
+                setName={setName}
+                history={history}
+              />
+            )}
           />
           <Route path="/signup" component={SignUp} />
           <Route path="/schoolsearch" component={SchoolSearch} />
           <Route path="/careersearch" component={CareerSearch} />
-          <Route path="/survey" component={Survey}/>
-          <ProtectedRoute path="/profile" loggedIn={loggedIn} name={name} component={Profile} />
+          <Route path="/survey" component={Survey} />
+          <ProtectedRoute
+            path="/profile"
+            loggedIn={loggedIn}
+            name={name}
+            component={() => (
+              <Profile
+                setLoggedIn={setLoggedIn}
+                userSince={userSince}
+                setArticles={setArticles}
+                name={name}
+                articles={articles}
+              />
+            )}
+          />
         </Switch>
       </Router>
     </>
-  )
-};
+  );
+}
 
 export default hot(App);
