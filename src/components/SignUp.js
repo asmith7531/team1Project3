@@ -45,7 +45,7 @@ export default class SignUp extends Component {
                   <input
                     id="password"
                     type="password"
-                    className="validate   "
+                    className="validate"
                     data-length="15"
                   />
                   <label for="password">Password</label>

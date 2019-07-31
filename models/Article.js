@@ -1,27 +1,24 @@
 module.exports = function (sequelize, DataTypes) {
-    var College = sequelize.define("College", {
+    var Article = sequelize.define("Article", {
         // Giving the user model a name of type STRING
-        name: {
+        header: {
             type: DataTypes.STRING(50),
             allowNull: false,
             unique: true
         },
-        city: {
+        url: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        
-        
+        author: {
+            type:  DataTypes.STRING,
+            allowNull: false,
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
     });
 
-    College.associate = models => {
-        College.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
-
-
-    return College;
+    return Article;
 };
