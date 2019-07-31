@@ -3,6 +3,7 @@ import Quiz from '../../components/CareerSurvey/Quiz';
 import quizQuestions from '../../Utility/quizQuestions';
 import Result from '../../components/CareerSurvey/Result';
 import Navbar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 
 // import hat from '../dist/graduation-icon-png-1.jpg';
 import M from "materialize-css";
@@ -241,6 +242,7 @@ class Survey extends Component {
         <div className="container">
         {this.state.result ? this.renderResult() : this.renderQuiz()}
         </div>
+        <Footer />
       </div>
     );
   }
