@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Quiz from '../components/CareerSurvey/Quiz.js';
+import Quiz from '../components/CareerSurvey/Quiz';
 import quizQuestions from '../Utility/quizQuestions';
 import Result from '../components/CareerSurvey/Result'
 
@@ -231,7 +231,7 @@ class Survey extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={hat} className="App-logo" alt="logo" />
+          <img className="App-logo" alt="logo" />
           <h2>Career Survey</h2>
           <h5>College, Trades, Certification programs and more - find what suits you best</h5>
         </div>
