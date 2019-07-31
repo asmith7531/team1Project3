@@ -72,12 +72,12 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
             <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
 
             <div class="row">
-                <div class="col s8">
+                <div class="col s9">
                     {
                         (displayForm) ? component : null
                     }
                 </div>
-                <div class="col s4">
+                <div class="col s3">
                     <section class="flow-text center-align">
                         <h3>
                             <a onClick={handleArticles}>
