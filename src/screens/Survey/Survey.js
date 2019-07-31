@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Quiz from '../components/CareerSurvey/Quiz';
-import quizQuestions from '../Utility/quizQuestions';
-import Result from '../components/CareerSurvey/Result';
-import NavBar from "../components/NavBar";
+import Quiz from '../../components/CareerSurvey/Quiz';
+import quizQuestions from '../../Utility/quizQuestions';
+import Result from '../../components/CareerSurvey/Result';
+import Navbar from "../../components/NavBar";
 
 // import hat from '../dist/graduation-icon-png-1.jpg';
 import M from "materialize-css";
-import '../styles/Survey.css';
+import './styles.css';
 
 class Survey extends Component {
   constructor(props) {
@@ -232,12 +232,15 @@ class Survey extends Component {
   render() {
     return (
       <div className="App">
+        <Navbar />
         <div className="App-header">
           <img className="App-logo" alt="logo" />
           <h2>Career Survey</h2>
           <h5>College, Trades, Certification programs and more - find what suits you best</h5>
         </div>
+        <div className="container">
         {this.state.result ? this.renderResult() : this.renderQuiz()}
+        </div>
       </div>
     );
   }
