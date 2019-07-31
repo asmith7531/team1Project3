@@ -3,7 +3,7 @@ import API from '../../Utility/API';
 import { Link } from "react-router-dom";
 import M from "materialize-css";
 import views from './views.jpg';
-import SchoolSearch from "../SchoolSearch";
+import Form from "../../components/Form";
 import './styles.css';
 
 
@@ -24,7 +24,7 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
     const handleSwitch = (e) => {
         switch (e.target.value) {
             case "form":
-                setComponent(<SchoolSearch id={id} />)
+                setComponent(<Form id={id} />)
                 break;
             case "colleges":
                 setComponent(<Form />)
@@ -53,36 +53,37 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
                     <p>Member since: {userSince}</p>
                 </div></li>
                 <li><a className="subheader">View..</a></li>
-                <li><a href="#!">My Colleges</a></li>
-                <li><a href="#!">My Careers</a></li>
+                <li><button>My Colleges</button></li>
+                <li><button>My Careers</button></li>
                 <li><div className="divider"></div></li>
                 <li><a className="subheader">Or..</a></li>
                 <li><button
-                onClick={handleSwitch}
-                value="form"
-                className="waves-effect">Search</button></li>
-                {/* <Link to="/schoolsearch">Search</Link> */}
-                <li onClick={handleLogout}><a>Logout</a></li>
+                    onClick={handleSwitch}
+                    value="form"
+                    className="waves-effect">Search
+                    </button>
+                </li>
+                <li><button
+                    onClick={handleLogout}>
+                    Logout
+                </button>
+                </li>
             </ul>
             <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-            <div>
-                {
-                    (displayForm) ? component : null
-                }
-            </div>
 
             <div class="row">
-                <div class="col s4 offset-s8">
-                    <span class="flow-text center-align">
+                <div class="col s8">
+                    {
+                        (displayForm) ? component : null
+                    }
+                </div>
+                <div class="col s4">
+                    <section class="flow-text center-align">
                         <h3>
                             <a onClick={handleArticles}>
                                 Current Events
                             </a>
                         </h3>
-                    </span>
-                </div>
-                <div class="col s4 offset-s8">
-                    <span class="flow-text">
                         <ul>
                             {latestArticles.map((article) =>
                                 (
@@ -108,7 +109,7 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
                                 )
                             )}
                         </ul>
-                    </span>
+                    </section>
                 </div>
             </div>
         </>

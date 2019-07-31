@@ -10,7 +10,7 @@ import SearchResult from "../components/Results/index";
 import JobSearchResults from "../components/Jobs/index";
 import Compare from "../components/Compare/index";
 // import Controller from "../../controllers";
-const { createCollege } = Controller;
+// const { createCollege } = Controller;
 
 
 export default class SchoolSearch extends Component {
