@@ -36,6 +36,7 @@ const SearchResult = props => {
         {props.school_info.map(school_inf => {
           return (
             <div className="col s4 m4 l12" id="schoolInfo">
+
               <div className="card">
                 <div className="card-image waves-effect waves-block waves-light">
                   <button

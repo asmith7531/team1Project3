@@ -11,6 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         
+        
     });
 
     College.associate = models => {

@@ -3,7 +3,7 @@ import API from '../../Utility/API';
 import { Link } from "react-router-dom";
 import M from "materialize-css";
 import views from './views.jpg';
-import Form from "../../components/Form";
+import SchoolSearch from "../SchoolSearch";
 import './styles.css';
 
 
@@ -17,12 +17,6 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
         API.logout(setLoggedIn)
     };
 
-    const loadForm = () => {
-        console.log("TESTING LOAD FORM FUNCTION");
-        setDisplayForm(true);
-    };
-
-
     const handleArticles = (e) => {
         API.getArticles(setArticles);
     };
@@ -30,7 +24,7 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
     const handleSwitch = (e) => {
         switch (e.target.value) {
             case "form":
-                setComponent(<Form />)
+                setComponent(<SchoolSearch id={id} />)
                 break;
             case "colleges":
                 setComponent(<Form />)
