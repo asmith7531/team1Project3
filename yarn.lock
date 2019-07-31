@@ -5253,7 +5253,7 @@ prop-types-extra@^1.1.0:
     react-is "^16.3.2"
     warning "^3.0.0"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -5440,6 +5440,11 @@ react-bootstrap@^1.0.0-beta.9:
     uncontrollable "^6.1.0"
     warning "^4.0.3"
 
+react-circular-progressbar@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-circular-progressbar/-/react-circular-progressbar-2.0.1.tgz#643328b410e8bb0c378211d40734aafb964c6066"
+  integrity sha512-OMgN7VMH3Tgze/wVlIOrktKKgIneKRlY73OMQt1etl14+dZqJD0zNIKrcnmg+f6GIskjY/lPxLPGZ8zqpBHOPQ==
+
 react-context-toolbox@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/react-context-toolbox/-/react-context-toolbox-2.0.2.tgz#35637287cb23f801e6ed802c2bb7a97e1f04e3fb"
@@ -5501,6 +5506,13 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-minimal-pie-chart@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-minimal-pie-chart/-/react-minimal-pie-chart-5.0.0.tgz#44c634a8431816a2ed7476f14525ed9d46866da8"
+  integrity sha512-ot5hBb8PBcJzViXohT90HLYZHYxNDXvFQSIvYPc0WS8b44KlJbx8Lcdg/6MkUSmmI+EZZwnydOlK1MqCr/+s1g==
+  dependencies:
+    prop-types "^15.5.7"
 
 react-motion@^0.5.0:
   version "0.5.2"
