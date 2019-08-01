@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
-import Quiz from '../../components/CareerSurvey/Quiz';
-import quizQuestions from '../../Utility/quizQuestions';
-import Result from '../../components/CareerSurvey/Result';
+import React, { Component } from "react";
+import Quiz from "../../components/CareerSurvey/Quiz";
+import quizQuestions from "../../Utility/quizQuestions";
+import Result from "../../components/CareerSurvey/Result";
 import Navbar from "../../components/NavBar";
 
 // import hat from '../dist/graduation-icon-png-1.jpg';
 import M from "materialize-css";
-import './styles.css';
+import "./styles.css";
 
 class Survey extends Component {
   constructor(props) {
     super(props);
-  
+
     this.state = {
       counter: 0,
       questionId: 1,
-      question: '',
+      question: "",
       answerOptions: [],
-      answer: '',
+      answer: "",
       answersCount: {
         Academics: {
           Accounting: 0,
@@ -63,15 +63,15 @@ class Survey extends Component {
           WomenGenderStudies: 0
         }
       },
-      result: ''
+      result: ""
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
 
   componentDidMount() {
-    const answerOptions = quizQuestions.map(question => question.answers);  
-  
+    const answerOptions = quizQuestions.map(question => question.answers);
+
     this.setState({
       question: quizQuestions[0].question,
       answerOptions: answerOptions[0]
@@ -79,87 +79,81 @@ class Survey extends Component {
   }
 
   setUserAnswer(answer) {
-    const answersCount = this.state.answersCount
+    const answersCount = this.state.answersCount;
     let applyAnswer = answer => {
-      const answer_array = answer.split(",")
+      const answer_array = answer.split(",");
 
       if (answer_array.length === 1) {
-        console.log("reply of no")
-
+        console.log("reply of no");
       } else if (answer_array.length === 2) {
-        let first_answer = answer_array[0]
-        let second_answer = answer_array[1]
-        answersCount['Academics'][first_answer] += 1
-        answersCount['Academics'][second_answer] += 1
-
+        let first_answer = answer_array[0];
+        let second_answer = answer_array[1];
+        answersCount["Academics"][first_answer] += 1;
+        answersCount["Academics"][second_answer] += 1;
       } else if (answer_array.length === 3) {
-        let first_answer = answer_array[0]
-        let second_answer = answer_array[1]
-        let third_answer = answer_array[2]
-        answersCount['Academics'][first_answer] += 1
-        answersCount['Academics'][second_answer] += 1
-        answersCount['Academics'][third_answer] += 1
-
+        let first_answer = answer_array[0];
+        let second_answer = answer_array[1];
+        let third_answer = answer_array[2];
+        answersCount["Academics"][first_answer] += 1;
+        answersCount["Academics"][second_answer] += 1;
+        answersCount["Academics"][third_answer] += 1;
       } else if (answer_array.length === 4) {
-        let first_answer = answer_array[0]
-        let second_answer = answer_array[1]
-        let third_answer = answer_array[2]
-        let fourth_answer = answer_array[3]
-        answersCount['Academics'][first_answer] += 1
-        answersCount['Academics'][second_answer] += 1
-        answersCount['Academics'][third_answer] += 1
-        answersCount['Academics'][fourth_answer] += 1
-
+        let first_answer = answer_array[0];
+        let second_answer = answer_array[1];
+        let third_answer = answer_array[2];
+        let fourth_answer = answer_array[3];
+        answersCount["Academics"][first_answer] += 1;
+        answersCount["Academics"][second_answer] += 1;
+        answersCount["Academics"][third_answer] += 1;
+        answersCount["Academics"][fourth_answer] += 1;
       } else if (answer_array.length === 5) {
-        let first_answer = answer_array[0]
-        let second_answer = answer_array[1]
-        let third_answer = answer_array[2]
-        let fourth_answer = answer_array[3]
-        let fifth_answer = answer_array[4]
-        answersCount['Academics'][first_answer] += 1
-        answersCount['Academics'][second_answer] += 1
-        answersCount['Academics'][third_answer] += 1
-        answersCount['Academics'][fourth_answer] += 1
-        answersCount['Academics'][fifth_answer] += 1
-        
+        let first_answer = answer_array[0];
+        let second_answer = answer_array[1];
+        let third_answer = answer_array[2];
+        let fourth_answer = answer_array[3];
+        let fifth_answer = answer_array[4];
+        answersCount["Academics"][first_answer] += 1;
+        answersCount["Academics"][second_answer] += 1;
+        answersCount["Academics"][third_answer] += 1;
+        answersCount["Academics"][fourth_answer] += 1;
+        answersCount["Academics"][fifth_answer] += 1;
       } else if (answer_array.length === 6) {
-        let first_answer = answer_array[0]
-        let second_answer = answer_array[1]
-        let third_answer = answer_array[2]
-        let fourth_answer = answer_array[3]
-        let fifth_answer = answer_array[4]
-        let sixth_answer = answer_array[5]
-        answersCount['Academics'][first_answer] += 1
-        answersCount['Academics'][second_answer] += 1
-        answersCount['Academics'][third_answer] += 1
-        answersCount['Academics'][fourth_answer] += 1
-        answersCount['Academics'][fifth_answer] += 1
-        answersCount['Academics'][sixth_answer] += 1
+        let first_answer = answer_array[0];
+        let second_answer = answer_array[1];
+        let third_answer = answer_array[2];
+        let fourth_answer = answer_array[3];
+        let fifth_answer = answer_array[4];
+        let sixth_answer = answer_array[5];
+        answersCount["Academics"][first_answer] += 1;
+        answersCount["Academics"][second_answer] += 1;
+        answersCount["Academics"][third_answer] += 1;
+        answersCount["Academics"][fourth_answer] += 1;
+        answersCount["Academics"][fifth_answer] += 1;
+        answersCount["Academics"][sixth_answer] += 1;
+      } else if (answer_array.length === 7) {
+        let first_answer = answer_array[0];
+        let second_answer = answer_array[1];
+        let third_answer = answer_array[2];
+        let fourth_answer = answer_array[3];
+        let fifth_answer = answer_array[4];
+        let sixth_answer = answer_array[5];
+        let seventh_answer = answer_array[6];
+        answersCount["Academics"][first_answer] += 1;
+        answersCount["Academics"][second_answer] += 1;
+        answersCount["Academics"][third_answer] += 1;
+        answersCount["Academics"][fourth_answer] += 1;
+        answersCount["Academics"][fifth_answer] += 1;
+        answersCount["Academics"][sixth_answer] += 1;
+        answersCount["Academics"][seventh_answer] += 1;
+      }
 
-      }  else if (answer_array.length === 7) {
-        let first_answer = answer_array[0]
-        let second_answer = answer_array[1]
-        let third_answer = answer_array[2]
-        let fourth_answer = answer_array[3]
-        let fifth_answer = answer_array[4]
-        let sixth_answer = answer_array[5]
-        let seventh_answer = answer_array[6]
-        answersCount['Academics'][first_answer] += 1
-        answersCount['Academics'][second_answer] += 1
-        answersCount['Academics'][third_answer] += 1
-        answersCount['Academics'][fourth_answer] += 1
-        answersCount['Academics'][fifth_answer] += 1
-        answersCount['Academics'][sixth_answer] += 1
-        answersCount['Academics'][seventh_answer] += 1
-      } 
-
-      return answersCount
-    }
+      return answersCount;
+    };
 
     this.setState({
       answersCount: applyAnswer(answer),
       answer: answer
-    })
+    });
 
     console.log("this.state: " + JSON.stringify(this.state));
     console.log("this.state.answer: " + JSON.stringify(this.state.answer));
@@ -168,10 +162,10 @@ class Survey extends Component {
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
     if (this.state.questionId < quizQuestions.length) {
-        setTimeout(() => this.setNextQuestion(), 500);
-      } else {
-        setTimeout(() => this.setResults(this.getResults()), 500);
-      }
+      setTimeout(() => this.setNextQuestion(), 500);
+    } else {
+      setTimeout(() => this.setResults(this.getResults()), 500);
+    }
   }
 
   setNextQuestion() {
@@ -182,33 +176,38 @@ class Survey extends Component {
       questionId: questionId,
       question: quizQuestions[counter].question,
       answerOptions: quizQuestions[counter].answers,
-      answer: ''
+      answer: ""
     });
   }
 
   getResults() {
     const answersCount = this.state.answersCount;
     console.log(answersCount);
-    const academicAnswer = answersCount['Academics'];
+    const academicAnswer = answersCount["Academics"];
     console.log(academicAnswer);
     const answersCountKeys = Object.keys(academicAnswer);
     console.log(answersCountKeys);
-    const answersCountValues = answersCountKeys.map((key) => academicAnswer[key]);
+    const answersCountValues = answersCountKeys.map(key => academicAnswer[key]);
     console.log(answersCountValues);
     const maxAnswerCount = Math.max.apply(null, answersCountValues);
     console.log(maxAnswerCount);
-    console.log("x194x: " + answersCountKeys.filter((key) => academicAnswer[key] === maxAnswerCount));
-  
-    return answersCountKeys.filter((key) => academicAnswer[key] === maxAnswerCount);
+    console.log(
+      "x194x: " +
+        answersCountKeys.filter(key => academicAnswer[key] === maxAnswerCount)
+    );
+
+    return answersCountKeys.filter(
+      key => academicAnswer[key] === maxAnswerCount
+    );
   }
 
-  setResults (result) {
+  setResults(result) {
     if (result.length === 1) {
       this.setState({ result: result[0] });
     } else if (result.length >= 2) {
       this.setState({ result: result[0] + " and/or " + result[1] });
     } else {
-      this.setState({ result: 'Undetermined' });
+      this.setState({ result: "Undetermined" });
     }
   }
 
@@ -234,12 +233,14 @@ class Survey extends Component {
       <div className="App">
         <Navbar />
         <div className="App-header">
-          <img className="App-logo" alt="logo" />
           <h2>Career Survey</h2>
-          <h5>College, Trades, Certification programs and more - find what suits you best</h5>
+          <h5>
+            College, Trades, Certification programs and more - find what suits
+            you best
+          </h5>
         </div>
         <div className="container">
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+          {this.state.result ? this.renderResult() : this.renderQuiz()}
         </div>
       </div>
     );
