@@ -4,6 +4,7 @@ import M from "materialize-css";
 import views from './views.jpg';
 import roads from './road_to_success.jpg';
 import Form from "../../components/Form";
+import Clock from "../../components/Clock";
 import { Link, Element } from 'react-scroll'
 import './styles.css';
 
@@ -11,14 +12,6 @@ import './styles.css';
 const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) => {
     const [displayForm, setDisplayForm] = useState(false);
     const [component, setComponent] = useState(null);
-
-    const showForms = () => {
-        if (displayForm) {
-            return component
-        }
-        return null;
-    };
-
 
     const handleLogout = (e) => {
         e.preventDefault();
@@ -103,6 +96,7 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
                 <div class="parallax">
                     <img src={roads} />
                 </div>
+                <Clock/>
             </div>
 
             <Element name="content" className="element">
