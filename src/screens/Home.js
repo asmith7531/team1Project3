@@ -15,13 +15,8 @@ export default class Home extends Component {
     return (
       <div>
         <NavBar />
-        <div className="s12 m10 l8">
+        <div className="s12">
           <Carousel />
-        </div>
-        <div className="container">
-          <Card className="left" />
-          <Card className="left" />
-          <Card className="left" />
         </div>
         <Footer />
       </div>

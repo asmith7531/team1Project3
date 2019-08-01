@@ -10,7 +10,7 @@ import SearchResult from "../components/Results/index";
 import JobSearchResults from "../components/Jobs/index";
 import Compare from "../components/Compare/index";
 // import Controller from "../../controllers";
-const { createCollege } = Controller;
+// const { createCollege } = Controller;
 
 
 export default class SchoolSearch extends Component {
@@ -37,7 +37,7 @@ export default class SchoolSearch extends Component {
     this.setStateValue = this.setStateValue.bind(this);
     this.setCourseValue = this.setCourseValue.bind(this);
     this.handleCompare = this.handleCompare.bind(this);
-    this.addCollege = this.addCollege.bind(this);
+    // this.addCollege = this.addCollege.bind(this);
   }
 
   // addCollege(e) {
