@@ -15,7 +15,7 @@ const Home = () => (
           </li>
           <li className="">
             <Link className="white-text" to="/careersearch">
-              Discover Careers
+              Discover Scholarships
             </Link>
           </li>
           <li className="">
