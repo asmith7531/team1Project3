@@ -82,7 +82,9 @@ module.exports = (app) => {
   app.get("/api/articles", (req, res) => {
     log(chalk.green.bold("<----------/API/ARTICLES ROUTE------------> "));
     getArticles(req, res);
-  })
+  });
+
+  
 }
 
 exports = router
