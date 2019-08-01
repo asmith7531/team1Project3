@@ -3,17 +3,16 @@ import { Link } from "react-router-dom";
 import API from "../Utility/API";
 import Footer from "../components/Footer";
 import Axios from "axios";
-
+import Background from "../../dist/36fe5e77c79ffbf8a1fcefee58fc87df.jpg";
 
 const Login = ({ setLoggedIn, setUserSince, setName, setId, history }) => {
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleUserChange = e => setUsername(e.target.value);
   const handlePwChange = e => setPassword(e.target.value);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     if (username && password) {
       API.login(
@@ -30,12 +29,12 @@ const Login = ({ setLoggedIn, setUserSince, setName, setId, history }) => {
     } else {
       alert("Please input required fields");
     }
-  }
+  };
 
   useEffect(() => {
     var elem = document.querySelector(".parallax");
     var instance = M.Parallax.init(elem);
-    Axios.post('/api/articles').then(feedback => console.log(feedback));
+    Axios.post("/api/articles").then(feedback => console.log(feedback));
   }, []);
 
   return (
@@ -46,7 +45,10 @@ const Login = ({ setLoggedIn, setUserSince, setName, setId, history }) => {
         </div>
         <div className="container section">
           <div className="row s6 valign-wrapper offset-s3">
-            <form onSubmit={handleSubmit} className="col center s6 offset-s3 card-panel ">
+            <form
+              onSubmit={handleSubmit}
+              className="col center s6 offset-s3 card-panel "
+            >
               <h3>Sign In</h3>
               <div className="row">
                 <div className="input-field col s12">
@@ -55,7 +57,8 @@ const Login = ({ setLoggedIn, setUserSince, setName, setId, history }) => {
                     onChange={handleUserChange}
                     id="userName"
                     type="text"
-                    className="validate" />
+                    className="validate"
+                  />
                   <label for="userName">Username</label>
                 </div>
                 <div className="input-field col s12">
@@ -64,7 +67,8 @@ const Login = ({ setLoggedIn, setUserSince, setName, setId, history }) => {
                     onChange={handlePwChange}
                     id="password"
                     type="password"
-                    className="validate" />
+                    className="validate"
+                  />
                   <label for="password">Password</label>
                 </div>
                 <a>
@@ -74,18 +78,22 @@ const Login = ({ setLoggedIn, setUserSince, setName, setId, history }) => {
                   <Link to="/profile">Profile</Link>
                 </a>
               </div>
-              <input href="/create/user" className="input-field waves-effect waves-light btn" type="submit" value="Enter" />
+              <input
+                href="/create/user"
+                className="input-field waves-effect waves-light btn"
+                type="submit"
+                value="Enter"
+              />
             </form>
           </div>
         </div>
         <div className="parallax">
-          <img src="https://images.unsplash.com/photo-1502990313206-7f37a9514bea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+          <img src={Background} />
         </div>
       </div>
       <Footer />
     </>
   );
-}
-
+};
 
 export default Login;

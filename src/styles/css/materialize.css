@@ -2785,7 +2785,7 @@ video.responsive-video {
   left: 50%;
   bottom: 0;
   min-width: 100%;
-  min-height: 100%;
+  min-height: auto;
   transform: translate3d(0, 0, 0);
   transform: translateX(-50%);
 }
