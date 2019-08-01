@@ -46,7 +46,7 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
     let latestArticles = articles.slice(-7);
 
     return (
-        <>
+        <div className="profile">
             <ul id="slide-out" className="sidenav">
                 <li><div className="user-view">
                     <div className="background">
@@ -92,11 +92,27 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
             </ul>
 
             <div class="parallax-container">
-                <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                <a href="#" data-target="slide-out" className="sidenav-trigger navBurger"><i className="material-icons">menu</i></a>
                 <div class="parallax">
                     <img src={roads} />
                 </div>
-                <Clock  className="clock"/>
+                <div className="container">
+                    <div className="row">
+                        <div className="col s4">
+                            <Clock />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col s4">
+
+                        </div>
+                        <div className="col s4">
+                            <h4>
+                                Your Journey starts here..
+                        </h4>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <Element name="content" className="element">
@@ -132,11 +148,7 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
                     </div>
                 </div>
             </Element>
-
-
-
-
-        </>
+        </div>
     )
 }
 

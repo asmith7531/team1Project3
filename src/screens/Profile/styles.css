@@ -10,10 +10,6 @@
 } */
 
 
-nav {
-  background-color: #ffd600!important;
-}
-
 ul {
   text-align: right;
 }
@@ -27,4 +23,12 @@ ul {
 .user-view {
   text-align: right;
   line-height: 79px;
+}
+
+.navBurger {
+  position: fixed!important;
+}
+
+.profile {
+  color: #17D4FE!important;
 }
