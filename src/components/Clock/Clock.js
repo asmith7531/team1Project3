@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './styles.css';
 
 export default class Clock extends Component {
     constructor(props) {
@@ -26,7 +27,7 @@ export default class Clock extends Component {
     }
     render() {
       return(
-        <p>{this.state.time}</p>
+        <p className="clock">{this.state.time}</p>
       );
     }
   }

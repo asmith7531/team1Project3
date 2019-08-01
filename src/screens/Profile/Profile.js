@@ -4,7 +4,7 @@ import M from "materialize-css";
 import views from './views.jpg';
 import roads from './road_to_success.jpg';
 import Form from "../../components/Form";
-import Clock from "../../components/Clock";
+import Clock from "../../components/Clock/Clock";
 import { Link, Element } from 'react-scroll'
 import './styles.css';
 
@@ -96,7 +96,7 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
                 <div class="parallax">
                     <img src={roads} />
                 </div>
-                <Clock/>
+                <Clock  className="clock"/>
             </div>
 
             <Element name="content" className="element">
