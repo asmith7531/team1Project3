@@ -13,7 +13,6 @@ import Profile from "./screens/Profile/Profile";
 import ProtectedRoute from "./components/ProtectedRoute"
 
 
-
 function App(props) {
   const [id, setId] = useState("")
   const [loggedIn, setLoggedIn] = useState(false);
