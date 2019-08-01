@@ -139,7 +139,7 @@ body {
 .fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 0.5s ease-in-out 0.3s;
-}
+}ß
 
 .fade-leave {
   position: absolute;
