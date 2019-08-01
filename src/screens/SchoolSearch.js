@@ -12,6 +12,7 @@ import Compare from "../components/Compare/index";
 // import Controller from "../../controllers";
 // const { createCollege } = Controller;
 
+
 export default class SchoolSearch extends Component {
   componentDidMount() {
     M.AutoInit();
@@ -39,12 +40,12 @@ export default class SchoolSearch extends Component {
     this.addCollege = this.addCollege.bind(this);
   }
 
-  // addCollege(e) {
-  //   createCollege({
-  //     name: e.target.value,
-  //     UserId: this.props.id
-  //   })
-  // }
+  addCollege(e) {
+    createCollege({
+      name: e.target.value,
+      UserId: this.props.id
+    })
+  }
 
   handleChange(event) {
     this.setState({ value: event.target.value });
