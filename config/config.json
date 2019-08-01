@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Zenziethewonderdog26!",
+    "password": "Thanos23",
     "database": "project_three",
     "host": "localhost",
     "dialect": "mysql"
@@ -15,7 +15,10 @@
     "logging": false
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
+    "username": "otujkg9dj1ezrwlc",
+    "password": "mle37j0nb5a854a5",
+    "database": "t7mplht7w1jvrier",
+    "host": "blonze2d5mrbmcgf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
