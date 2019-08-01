@@ -131,7 +131,7 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
                                                     <img src={article.image} />
                                                 </div>
                                                 <div class="card-content">
-                                                    <h4>
+                                                    <h4 className="article-header">
                                                         {article.header}
                                                     </h4>
                                                 </div>
