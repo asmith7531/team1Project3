@@ -23,6 +23,7 @@ ul {
 .user-view {
   text-align: right;
   line-height: 79px;
+  letter-spacing: 2px;
 }
 
 .navBurger {

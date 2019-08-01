@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import API from '../../Utility/API';
 import M from "materialize-css";
-import views from './views.jpg';
-import roads from './road_to_success.jpg';
+import grad from './grad-pencil.jpg';
+import roads from './roads.jpg';
 import Form from "../../components/Form";
 import Clock from "../../components/Clock/Clock";
 import { Link, Element } from 'react-scroll'
@@ -50,7 +50,7 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
             <ul id="slide-out" className="sidenav">
                 <li><div className="user-view">
                     <div className="background">
-                        <img className="wave" src={views} />
+                        <img className="wave" src={grad} />
                     </div>
                     <h3>Welcome,</h3>
                     <h5>{name}</h5>
