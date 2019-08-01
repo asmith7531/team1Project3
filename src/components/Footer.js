@@ -14,23 +14,13 @@ export default function Footer() {
               <h5 className="white-text"> Helpful Links</h5>
               <ul>
                 <li>
-                  <a className="grey-text text-lighten-3" href="#!">
-                    Link 1
+                  <a className="grey-text text-lighten-3" href="https://github.com/asmith7531/team1project3">
+                    Our Github 
                   </a>
                 </li>
                 <li>
-                  <a className="grey-text text-lighten-3" href="#!">
-                    Link 2
-                  </a>
-                </li>
-                <li>
-                  <a className="grey-text text-lighten-3" href="#!">
-                    Link 3
-                  </a>
-                </li>
-                <li>
-                  <a className="grey-text text-lighten-3" href="#!">
-                    Link 4
+                  <a className="grey-text text-lighten-3" href="https://collegescorecard.ed.gov/">
+                    Api
                   </a>
                 </li>
               </ul>
@@ -38,7 +28,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-copyright">
-          <div className="container">© 2019 Copyright Text</div>
+          <div className="container">© 2019 Copyright </div>
         </div>
       </footer>
     </div>

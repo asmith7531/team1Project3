@@ -1,0 +1,28 @@
+.cPic1 {
+    background-image: url("./screens/Home/skyCeiling.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+
+}
+
+.cPic2 {
+    background-image: url("./screens/Home/crowdOfStudents.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+.cPic3 {
+    background-image: url("./screens/Home/coolOffice.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;   
+}
+
+.cPic4 {
+    background-image: url("./screens/Home/selfLearning.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;   
+}
