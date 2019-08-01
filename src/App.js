@@ -3,7 +3,7 @@ import { hot } from "react-hot-loader/root";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./styles/css/materialize.css";
 import "./styles/scss/materialize.scss";
-import Home from "./screens/Home";
+import Home from "./screens/Home/Home";
 import Login from "./screens/Login";
 import SignUp from "./screens/SignUp";
 import SchoolSearch from "./screens/SchoolSearch";
