@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import API from '../../Utility/API';
-import { Link } from "react-router-dom";
 import M from "materialize-css";
-import views from './views.jpg';
-import SchoolSearch from "../SchoolSearch";
+import grad from './grad.jpg';
+import roads from './roads.jpg';
+import Form from "../../components/Form";
+import Clock from "../../components/Clock/Clock";
+import { Link, Element } from 'react-scroll'
 import './styles.css';
 
 
 const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) => {
     const [displayForm, setDisplayForm] = useState(false);
     const [component, setComponent] = useState(null);
-
 
     const handleLogout = (e) => {
         e.preventDefault();
@@ -22,17 +23,20 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
     };
 
     const handleSwitch = (e) => {
-        switch (e.target.value) {
+        console.log("HANDLING SWITCH OF COMPONENT");
+        console.log(e.target.name);
+        switch (e.target.name) {
             case "form":
-                setComponent(<SchoolSearch id={id} />)
+                setComponent(<Form />)
+                console.log(component);
                 break;
             case "colleges":
                 setComponent(<Form />)
                 break;
-            default:
-                paymentForm = null;
         }
         setDisplayForm(true);
+        console.log(displayForm);
+        console.log(component);
     }
 
     useEffect(() => {
@@ -42,76 +46,107 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
     let latestArticles = articles.slice(-7);
 
     return (
-        <>
+        <div className="profile">
             <ul id="slide-out" className="sidenav">
                 <li><div className="user-view">
                     <div className="background">
-                        <img className="wave" src={views} />
+                        <img className="wave" src={grad} />
                     </div>
                     <h3>Welcome,</h3>
                     <h5>{name}</h5>
                     <p>Member since: {userSince}</p>
                 </div></li>
                 <li><a className="subheader">View..</a></li>
-                <li><a href="#!">My Colleges</a></li>
-                <li><a href="#!">My Careers</a></li>
+                <li><Link>My Colleges</Link></li>
+                <li><Link>My Careers</Link></li>
                 <li><div className="divider"></div></li>
                 <li><a className="subheader">Or..</a></li>
-                <li><button
-                onClick={handleSwitch}
-                value="form"
-                className="waves-effect">Search</button></li>
-                {/* <Link to="/schoolsearch">Search</Link> */}
-                <li onClick={handleLogout}><a>Logout</a></li>
+                <li>
+                    <Link
+                        activeClass="active"
+                        className="test1"
+                        to="content" spy={true}
+                        smooth={true} duration={500}
+                        onClick={handleSwitch}
+                        name="form"
+                    >
+                        Search
+                    </Link>
+                </li>
+                <li><Link
+                    onClick={handleLogout}>
+                    Logout
+                </Link>
+                </li>
+                <li><div className="divider"></div></li>
+                <li><a className="subheader">Extras</a></li>
+                <li>
+                    <Link
+                        onClick={handleArticles}
+                        activeClass="active" className="test1" to="content" spy={true} smooth={true} duration={500}>
+                        Articles
+                    </Link>
+                </li>
             </ul>
-            <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-            <div>
-                {
-                    (displayForm) ? component : null
-                }
+
+            <div class="parallax-container">
+                <a href="#" data-target="slide-out" className="sidenav-trigger navBurger"><i className="material-icons">menu</i></a>
+                <div class="parallax">
+                    <img src={roads} />
+                </div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col s4">
+                            <Clock />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col s4">
+
+                        </div>
+                        <div className="col s4">
+                            <h4 className="parallax-title">
+                                Your Journey starts here..
+                        </h4>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="row">
-                <div class="col s4 offset-s8">
-                    <span class="flow-text center-align">
-                        <h3>
-                            <a onClick={handleArticles}>
-                                Current Events
-                            </a>
-                        </h3>
-                    </span>
+            <Element name="content" className="element">
+                <div class="row">
+                    <div class="col s9">
+                        {(displayForm) ? component : null}
+                    </div>
+                    <div class="col s3">
+                        <section class="flow-text center-align">
+                            <ul>
+                                {latestArticles.map((article) =>
+                                    (
+                                        <li>
+                                            <div class="card">
+                                                <div class="card-image">
+                                                    <img src={article.image} />
+                                                </div>
+                                                <div class="card-content">
+                                                    <h4 className="article-header">
+                                                        {article.header}
+                                                    </h4>
+                                                </div>
+                                                <div class="card-action">
+                                                    <a href={article.url}>{article.author}</a>
+                                                </div>
+                                            </div>
+                                            <div className="divider"></div>
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+                        </section>
+                    </div>
                 </div>
-                <div class="col s4 offset-s8">
-                    <span class="flow-text">
-                        <ul>
-                            {latestArticles.map((article) =>
-                                (
-                                    <li>
-                                        <div class="card">
-                                            <div class="card-image">
-                                                <img src={article.image} />
-                                            </div>
-                                            <div class="card-content">
-                                                <h4>
-                                                    {article.header}
-                                                </h4>
-                                            </div>
-                                            <div class="card-action">
-                                                <a href={article.url}>{article.author}</a>
-                                            </div>
-                                        </div>
-                                        {/* <h6><a href={article.url}>{article.header}</a></h6>
-                                        <img className="wave" src={article.image} />
-                                        <h4>{article.author}</h4> */}
-                                        <div className="divider"></div>
-                                    </li>
-                                )
-                            )}
-                        </ul>
-                    </span>
-                </div>
-            </div>
-        </>
+            </Element>
+        </div>
     )
 }
 
