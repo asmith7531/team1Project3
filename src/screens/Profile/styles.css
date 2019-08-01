@@ -9,10 +9,9 @@
   padding-top: 15px;
 } */
 
-
-ul {
+/* ul {
   text-align: right;
-}
+} */
 
 /* .articles {
   color: #0d47a1!important;
@@ -20,28 +19,8 @@ ul {
   text-align: center!important;
 } */
 
-.user-view {
+/* .user-view {
   text-align: right;
   line-height: 79px;
-  letter-spacing: 2px;
-}
-
-.navBurger {
-  position: fixed!important;
-}
-
-.profile {
-  color: #17D4FE!important;
-  font-family: 'Lacquer', sans-serif;
-}
-
-.article-header {
-  font-size: 2.28rem!important;
-}
-
-
-.parallax-header {
-  font-size: 4.28rem!important;
-  line-height: 140%!important;
-  margin: 1.52rem 0 0.912rem 0!important;
-}
+  color: #c62828;
+} */

@@ -16,8 +16,8 @@ export default class CareerSearch extends Component {
         <NavBar />
         <div className="container center-align">
           <div className="row">
-            <h3>Find Careers - this is incomplete</h3>
-            <h5 className="white-text">Find your perfect career.</h5>
+            <h3>Find Scholarships - this is incomplete</h3>
+            <h5 className="white-text" />
           </div>
           {/* <div className="col s12 m6 l6"> */}
           <form className="">
