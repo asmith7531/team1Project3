@@ -24,8 +24,8 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
 
     const handleSwitch = (e) => {
         console.log("HANDLING SWITCH OF COMPONENT");
-        console.log(e.target.value);
-        switch (e.target.value) {
+        console.log(e.target.name);
+        switch (e.target.name) {
             case "form":
                 setComponent(<Form />)
                 console.log(component);
@@ -57,28 +57,26 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
                     <p>Member since: {userSince}</p>
                 </div></li>
                 <li><a className="subheader">View..</a></li>
-                <li><button>My Colleges</button></li>
-                <li><button>My Careers</button></li>
+                <li><Link>My Colleges</Link></li>
+                <li><Link>My Careers</Link></li>
                 <li><div className="divider"></div></li>
                 <li><a className="subheader">Or..</a></li>
-                <li onClick={handleSwitch} value="form">
+                <li>
                     <Link
-                        activeClass="active" className="test1" to="content" spy={true} smooth={true} duration={500}
-                    // onClick={handleSwitch} value="form"
-                    // activeClass="active" className="test1" to="content" spy={true} smooth={true} duration={500}
+                        activeClass="active"
+                        className="test1"
+                        to="content" spy={true}
+                        smooth={true} duration={500}
+                        onClick={handleSwitch}
+                        name="form"
                     >
-                        <button
-                            onClick={handleSwitch}
-                            value="form"
-                        >
-                            Search
-                        </button>
+                        Search
                     </Link>
                 </li>
-                <li><button
+                <li><Link
                     onClick={handleLogout}>
                     Logout
-                </button>
+                </Link>
                 </li>
                 <li><div className="divider"></div></li>
                 <li><a className="subheader">Extras</a></li>
@@ -107,7 +105,7 @@ const Profile = ({ name, userSince, setLoggedIn, setArticles, articles, id }) =>
 
                         </div>
                         <div className="col s4">
-                            <h4>
+                            <h4 className="parallax-title">
                                 Your Journey starts here..
                         </h4>
                         </div>

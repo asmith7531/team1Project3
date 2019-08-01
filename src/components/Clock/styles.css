@@ -5,13 +5,6 @@
     left: 66%;
     transform: translateX(-50%) translateY(-50%);
     font-size: 109%;
-    /* font-family: Orbitron; */
     letter-spacing: 7px;
     transform: translateX(-50%) translateY(-50%);
-}
-
-h4 {
-    font-size: 4.28rem!important;
-    line-height: 140%!important;
-    margin: 1.52rem 0 0.912rem 0!important;
 }
