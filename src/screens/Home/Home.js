@@ -7,8 +7,7 @@ import M from "materialize-css";
 
 export default class Home extends Component {
   componentDidMount() {
-    var elem = document.querySelector(".carousel");
-    var instance = M.Carousel.init(elem, { duration: 100 });
+    M.AutoInit();
   }
 
   render() {
