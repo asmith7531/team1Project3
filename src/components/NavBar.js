@@ -5,24 +5,32 @@ const Home = () => (
     <nav className="teal">
       <div className="nav-wrapper">
         <a href="" className="brand-logo center">
-          <h4>ZigZag</h4>
+          <h4 className="white-text">ZigZag</h4>
         </a>
         <ul className="left hide-on-med-and-down">
           <li className="active">
-            <Link to="/">Dashboard</Link>
+            <Link className="white-text" to="/">
+              Dashboard
+            </Link>
           </li>
           <li className="">
-            <Link to="/careersearch">Discover Careers</Link>
+            <Link className="white-text" to="/careersearch">
+              Discover Careers
+            </Link>
           </li>
           <li className="">
-            <Link to="/survey">Find Your Passion</Link>
+            <Link className="white-text" to="/survey">
+              Find Your Passion
+            </Link>
           </li>
           <li className="">
-            <Link to="/schoolsearch">Find Schools</Link>
+            <Link className="white-text" to="/schoolsearch">
+              Find Schools
+            </Link>
           </li>
         </ul>
         <ul className="right hide-on-med-and-down">
-          <Link to="/login" className="material-icons">
+          <Link className="white-text" to="/login" className="material-icons">
             account_circle
           </Link>
         </ul>
@@ -30,6 +38,5 @@ const Home = () => (
     </nav>
   </>
 );
-
 
 export default Home;

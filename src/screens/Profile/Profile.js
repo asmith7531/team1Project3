@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import API from '../../Utility/API';
 import M from "materialize-css";
-import grad from './grad-pencil.jpg';
+import grad from './grad.jpg';
 import roads from './roads.jpg';
 import Form from "../../components/Form";
 import Clock from "../../components/Clock/Clock";
