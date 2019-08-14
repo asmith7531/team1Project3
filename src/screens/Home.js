@@ -18,6 +18,9 @@ export default class Home extends Component {
         <div className="s12 m10 l8">
           <Carousel />
         </div>
+        <div>
+          <p> THIS BRANCH EXISTS AS A SAVE FILE IN CASE I BREAK ANYTHING WHEN I PULL DOWN FROM MASTER RIGHT NOW 11:25am Aug 14.2019. First master pull since Aug 3. </p>
+        </div>
         <div className="container">
           <Card className="left" />
           <Card className="left" />
