@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "../../components/NavBar";
-import Carousel from "../../components/Carousel";
+import Carousel from "../../components/Carousel/Carousel";
 import Footer from "../../components/Footer";
 import M from "materialize-css";
 import books from "./books.jpg"
@@ -15,13 +15,9 @@ export default class Home extends Component {
       <div>
         <NavBar />
         <div className="parallax-container">
-          <br />
-          <br />
-          <br />
           <div className="s12 m10 l8">
             <Carousel />
           </div>
-          <div className="container" />
           <div className="parallax">
             <img src={books} />
           </div>

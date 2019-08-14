@@ -1,0 +1,19 @@
+#panelOne {
+    background-image: url("https://lorempixel.com/580/250/nature/1");
+    background-color: green;
+}
+
+#panelTwo {
+    background-image: url("https://lorempixel.com/580/250/nature/2");
+    background-color: blue;
+}
+
+#panelThree {
+    background-image: url("https://lorempixel.com/580/250/nature/3");
+    background-color: yellow;
+}
+
+#panelFour {
+    background-image: url("https://lorempixel.com/580/250/nature/4");
+    background-color: red;
+}

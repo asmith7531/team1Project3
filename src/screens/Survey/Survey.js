@@ -238,10 +238,11 @@ class Survey extends Component {
             College, Trades, Certification programs and more - find what suits
             you best
           </h5>
-        </div>
-        <div className="container">
+          <div className="container" id="survey-box">
           {this.state.result ? this.renderResult() : this.renderQuiz()}
         </div>
+        </div>
+
       </div>
     );
   }
