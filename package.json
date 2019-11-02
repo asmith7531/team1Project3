@@ -39,7 +39,7 @@
     "react-scroll": "^1.7.12",
     "sass": "^1.22.5",
     "semantic-ui-react": "^0.87.3",
-    "sequelize": "^5.10.1"
+    "sequelize": "^5.15.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
