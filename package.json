@@ -22,7 +22,7 @@
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "materialize-css": "^1.0.0-rc.2",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
